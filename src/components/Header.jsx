@@ -12,10 +12,10 @@ return(
         </button>
 {/* Nav-links For Large Screen */}
     <ul className=" hidden lg:flex flex-col md:flex-row space-x-20 ">
-        <li><a href="#"className=" text-xl hover:text-orange-500">Home</a></li>
-        <li><a href="#" className="text-xl  hover:text-orange-500 transition duration-300">About</a></li>
-        <li><a href="#" className="text-xl  hover:text-orange-500 transition duration-300">Contact</a></li>
-        <li><a href="#" className="text-xl  hover:text-orange-500 transition duration-300">Projects</a></li>
+        <li><a href="#"className=" text-xl hover:bg-gray-300 p-4 rounded-md hover:text-orange-500">Home</a></li>
+        <li><a href="#" className="text-xl  hover:text-orange-500 hover:bg-gray-300 p-4 rounded-md transition duration-300">About</a></li>
+        <li><a href="#" className="text-xl  hover:text-orange-500 hover:bg-gray-300 p-4 rounded-md transition duration-300">Contact</a></li>
+        <li><a href="#" className="text-xl  hover:text-orange-500 hover:bg-gray-300 p-4 rounded-md transition duration-300">Projects</a></li>
     </ul>
     
     {/* Nav-links for Smasll Screen */}
