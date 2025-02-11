@@ -24,7 +24,7 @@ const SkillsShowcase = () => {
         { name: 'NextJS', category: 'Web', icon: <Server className="w-8 h-8" />, color: 'text-gray-200' },
         { name: 'EJS', category: 'Web', icon: <FileText className="w-8 h-8" />, color: 'text-pink-400' },
         { name: 'Tailwind', category: 'Styling', icon: <Layers className="w-8 h-8" />, color: 'text-teal-400' },
-           ];
+           ]; 
 
     return (
         <div className="p-6 bg-gradient-to-br from-gray-900 to-black min-h-screen flex flex-col items-center justify-center">
