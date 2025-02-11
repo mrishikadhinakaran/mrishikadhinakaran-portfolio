@@ -4,7 +4,7 @@ function About() {
   return (
     <section className="w-full min-h-screen bg-black text-white  px-3 py-16 flex items-center">
       <div className="grid grid-cols-2">
-      <div>
+      <div className="ml-7">
         <h2 className="text-5xl font-bold mb-4">About Me</h2>
         <p className="text-xl leading-relaxed font-mono ">
           Hi, I’m <span className="text-orange-400">Raghav Katta</span>, a passionate MERN Stack Developer who loves 
@@ -23,7 +23,7 @@ function About() {
         </p>
       </div>
 
-      <div className="ml-5 ">
+      <div className="ml-9 ">
         <form action="" className="flex flex-col gap-6 border-white rounded-4xl ">
         <input type="text" placeholder="Your Name" className="border-white py-2 px-3" />
         <input type="email" placeholder="Your Email"  className="border-white py-2 px-3"/>
