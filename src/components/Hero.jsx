@@ -1,5 +1,6 @@
-import React from "react";
+import "react";
 import Pfp from "../assets/Pfp.jpg"
+import {motion} from 'motion/react'
 
 function Hero() {
 
@@ -8,8 +9,8 @@ function Hero() {
 
             <div className="flex flex-col items-center lg:items-start gap-2">
                 <p className="text-white text-3xl md:text-2xl animate-pulse">A MERN Stack developer</p>
-                <h1 className="text-5xl sm:text-7xl lg:text-9xl text-orange-500 font-bold ">Hello!,I'm <br />
-                    Raghav Katta</h1>
+                <motion.h1 className="text-5xl sm:text-7xl lg:text-9xl text-orange-500 font-bold "><p>Hello!, I am</p> <br />
+                    Raghav Katta</motion.h1>
 
             </div>
 
