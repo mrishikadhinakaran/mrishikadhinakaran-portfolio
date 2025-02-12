@@ -28,18 +28,18 @@ const SkillsShowcase = () => {
 
     return (
         <div className="p-8 bg-gradient-to-br from-gray-900 to-black min-h-screen flex flex-col items-center justify-center">
-            <h2 className="text-7xl font-bold mb-16 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-500">
+            <h2 className=" text-4xl sm:text-6xl lg:text-7xl font-bold mb-16 text-center text-white bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
                 Technical Skills 
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl px-4">
+            <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl px-4">
                 {skills.map((skill) => (
                     <div
                         key={skill.name}
                         className={`
-                            relative p-6 rounded-xl shadow-xl cursor-pointer 
+                            relative p-6 sm:p-8 gap-4 sm:gap-6 rounded-xl shadow-xl cursor-pointer 
                             transition-all duration-300 ease-in-out
                             ring-4 ring-orange-500 ring-opacity-0
-                            transform-gpu backdrop-blur-sm
+                            transform-gpu backdrop-blur-md
                             ${activeSkill === skill.name 
                                 ? 'scale-105 bg-gray-800/90 ring-opacity-100' 
                                 : 'bg-gray-800/80 hover:ring-opacity-100 hover:scale-105'}
