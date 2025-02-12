@@ -9,7 +9,7 @@ function Hero() {
 
             <div className="flex flex-col items-center lg:items-start gap-2">
                 <p className="text-white text-3xl md:text-2xl animate-pulse">A MERN Stack developer</p>
-                <motion.h1 className="text-5xl sm:text-7xl lg:text-9xl text-orange-500 font-bold "><p>Hello!, I am</p> <br />
+                <motion.h1 className="text-5xl sm:text-7xl lg:text-9xl text-orange-500 font-bold ">Hello!, I&apos;m <br />
                     Raghav Katta</motion.h1>
 
             </div>
