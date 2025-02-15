@@ -10,7 +10,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      external: ['lucide-react'], // Add 'lucide-react' to the external dependencies
+      external: [] // Removed lucide-react from external dependencies
     },
   },
 });

@@ -1,31 +1,40 @@
-import  { useState } from 'react';
-import { motion } from 'motion/react'
+import { useState } from 'react';
+import { motion } from 'motion/react';
 import {
-    Code,
-    Database,
-    Server,
-    Rocket,
-    FileText,
-    Layers
-} from 'lucide-react';
+    DiMongodb,
+    DiNodejs,
+    DiPython,
+    DiJava,
+    DiReact
+} from 'react-icons/di';
+import {
+    SiExpress,
+    SiCplusplus,
+    SiTypescript,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiC
+} from 'react-icons/si';
+import { TbFileText } from 'react-icons/tb';
+import { BiData } from 'react-icons/bi';
 
 const SkillsShowcase = () => {
     const [activeSkill, setActiveSkill] = useState(null);
 
     const skills = [
-        { name: 'MongoDB', category: 'Database', icon: <Database className="w-12 h-12" />, color: 'text-blue-400' },
-        { name: 'Express', category: 'Web', icon: <Server className="w-12 h-12" />, color: 'text-green-400' },
-        { name: 'React', category: 'Web', icon: <Code className="w-12 h-12" />, color: 'text-pink-400' },
-        { name: 'NodeJS', category: 'Web', icon: <Server className="w-12 h-12" />, color: 'text-orange-400' },
-        { name: 'EJS', category: 'Web', icon: <FileText className="w-12 h-12" />, color: 'text-pink-400' },
-        { name: 'C', category: 'Systems', icon: <Code className="w-12 h-12" />, color: 'text-blue-400' },
-        { name: 'C++', category: 'Systems', icon: <Layers className="w-12 h-12" />, color: 'text-indigo-400' },
-        { name: 'Java', category: 'Enterprise', icon: <Rocket className="w-12 h-12" />, color: 'text-red-400' },
-        { name: 'Python', category: 'Data/AI', icon: <Database className="w-12 h-12" />, color: 'text-yellow-400' },
-        { name: 'TypeScript', category: 'Web', icon: <FileText className="w-12 h-12" />, color: 'text-blue-300' },
-        { name: 'NextJS', category: 'Web', icon: <FileText className="w-12 h-12" />, color: 'text-gray-200' },
-        { name: 'Tailwind', category: 'Styling', icon: <Layers className="w-12 h-12" />, color: 'text-teal-400' },
-        { name: 'SQL', category: 'Database', icon: <Database className="w-12 h-12" />, color: 'text-white' },
+        { name: 'MongoDB', category: 'Database', icon: <DiMongodb className="w-12 h-12" />, color: 'text-blue-400' },
+        { name: 'Express', category: 'Web', icon: <SiExpress className="w-12 h-12" />, color: 'text-green-400' },
+        { name: 'React', category: 'Web', icon: <DiReact className="w-12 h-12" />, color: 'text-pink-400' },
+        { name: 'NodeJS', category: 'Web', icon: <DiNodejs className="w-12 h-12" />, color: 'text-orange-400' },
+        { name: 'EJS', category: 'Web', icon: <TbFileText className="w-12 h-12" />, color: 'text-pink-400' },
+        { name: 'C', category: 'Systems', icon: <SiC className="w-12 h-12" />, color: 'text-blue-400' },
+        { name: 'C++', category: 'Systems', icon: <SiCplusplus className="w-12 h-12" />, color: 'text-indigo-400' },
+        { name: 'Java', category: 'Enterprise', icon: <DiJava className="w-12 h-12" />, color: 'text-red-400' },
+        { name: 'Python', category: 'Data/AI', icon: <DiPython className="w-12 h-12" />, color: 'text-yellow-400' },
+        { name: 'TypeScript', category: 'Web', icon: <SiTypescript className="w-12 h-12" />, color: 'text-blue-300' },
+        { name: 'NextJS', category: 'Web', icon: <SiNextdotjs className="w-12 h-12" />, color: 'text-gray-200' },
+        { name: 'Tailwind', category: 'Styling', icon: <SiTailwindcss className="w-12 h-12" />, color: 'text-teal-400' },
+        { name: 'SQL', category: 'Database', icon: <BiData className="w-12 h-12" />, color: 'text-white' },
     ];
 
     return (
