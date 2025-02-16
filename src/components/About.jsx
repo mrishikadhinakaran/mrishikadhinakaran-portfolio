@@ -6,14 +6,14 @@ function About() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto">
       <div className="ml-7">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
-        <p className="text-xl leading-relaxed font-mono ">
+        <p className="text-md md:text-xl leading-relaxed font-mono ">
           Hi, I’m <span className="text-orange-400">Raghav Katta</span>, a passionate MERN Stack Developer who loves 
           building dynamic, high-performance web applications. With expertise in 
           <span className="text-blue-400"> MongoDB</span>, <span className="text-yellow-400">Express.js</span>, 
           <span className="text-cyan-400"> React</span>, and <span className="text-purple-400">Node.js</span>, I enjoy crafting seamless user experiences 
           and scalable backend solutions.
         </p>
-        <p className="mt-4 text-xl font-mono">
+        <p className="mt-4 text-md md:text-xl font-mono">
           Beyond coding, I thrive on solving complex problems and staying up-to-date with the latest web technologies. 
           Whether it’s developing real-time applications, optimizing performance, or experimenting with new frameworks, 
           I’m always eager to push boundaries.

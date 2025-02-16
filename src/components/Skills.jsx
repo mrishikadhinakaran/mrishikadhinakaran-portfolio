@@ -39,9 +39,15 @@ const SkillsShowcase = () => {
 
     return (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration:1 }} className="p-8 bg-gradient-to-br from-gray-900 to-black min-h-screen flex flex-col items-center justify-center">
-            <motion.h2 animate={{x:[-100,0]}} transition={{duration:2, repeat:Infinity}} className=" text-4xl sm:text-6xl lg:text-7xl font-bold mb-16 text-center text-white bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
-                Technical Skills
-            </motion.h2>
+           <motion.h2
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1.2, ease: "easeInOut" }}
+  className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-16 text-center text-white bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500"
+>
+  Technical Skills
+</motion.h2>
+
             <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl px-4">
                 {skills.map((skill) => (
                     <div
