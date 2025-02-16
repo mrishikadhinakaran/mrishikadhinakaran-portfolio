@@ -1,9 +1,10 @@
 import "react";
 
+
 function About() {
   return (
     <section className="w-full min-h-screen bg-black text-white  px-3 py-16 flex items-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto">
       <div className="ml-7">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
         <p className="text-md md:text-xl leading-relaxed font-mono ">

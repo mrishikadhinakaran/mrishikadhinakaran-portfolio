@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { TypeAnimation } from "react-type-animation";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false)
     return (
         <nav className={`flex items-center justify-between px-10 py-4 shadow-md backdrop-blur-md z-50 ${menuOpen ? "bg-gray-900" : "bg-gray-900/90"}`}>
-            <span className="ml-5 text-xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text animate-pulse">
-                Raghav Katta
-            </span>
+            <TypeAnimation sequence={['Raghav Katta']} className="ml-5 text-xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text animate-pulse" wrapper="span"
+            speed={200} repeat={Infinity}/>
+           
+            
 
 
             {/* Menu Button */}
