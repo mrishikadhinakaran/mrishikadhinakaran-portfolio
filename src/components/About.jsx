@@ -24,7 +24,8 @@ function About() {
         </p>
       </div>
 
-      <div className="ml-9 ">
+      <div id="Contact"className="ml-9 ">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-orange-400">Contact Me</h2>
         <form action="" className="flex flex-col gap-6 border-white rounded-4xl ">
         <input type="text" placeholder="Your Name" className="border-white py-2 px-3" />
         <input type="email" placeholder="Your Email"  className="border-white py-2 px-3"/>

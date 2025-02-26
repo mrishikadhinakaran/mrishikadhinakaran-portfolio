@@ -9,8 +9,6 @@ import Seperation from './components/Seperation'
 import Skills from './components/Skills'
 function App() {
   
-  
-  
 const {scrollYProgress}=useScroll()
 const scaleX = useSpring(scrollYProgress, {
   stiffness: 50,
@@ -29,16 +27,16 @@ useEffect(() => {
         className='origin-left bg-gradient-to-r from-yellow-300 to-orange-500 w-full h-2 fixed top-0 left-0 z-50'></motion.div>
 
 <Header/>
-<section  id='Hero'>
+<section id='Home'>
 <Hero/>
 </section>
 <Seperation/>
-<section className='Skills'>
+<section id='Technologies'>
 <Skills/>
 </section>
 <Seperation/>
-<section className='About'>
-<About/>
+<section id='About'>
+<About />
 </section>
 <Footer/>
   </div>

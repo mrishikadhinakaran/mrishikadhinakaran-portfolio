@@ -19,11 +19,11 @@ function Footer(){
     
     </div>
     <div className="flex flex- justify-around mt-4">
-        <p>Home</p>
-        <p>About</p>
-        <p>Projects</p>
-        <p>Contact Us</p>
-    </div>
+        <a href="#Home" className="cursor-pointer hover:text-orange-500 transition-colors">Home</a>
+        <a href="#About" className="cursor-pointer hover:text-orange-500 transition-colors">About</a>
+        <a href="#Technologies" className="cursor-pointer hover:text-orange-500 transition-colors">Projects</a>
+        <a href="#Contact" className="cursor-pointer hover:text-orange-500 transition-colors">Contact Us</a>
+    </div>  
     </div>)
 }
 export default Footer
