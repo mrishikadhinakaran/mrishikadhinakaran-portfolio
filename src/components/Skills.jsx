@@ -43,33 +43,33 @@ const Skills = () => {
     };
 
     const skills = [
-        { name: 'MongoDB', icon: <DiMongodb className="w-14 h-14" /> },
-        { name: 'Express', icon: <SiExpress className="w-14 h-14" /> },
-        { name: 'React', icon: <DiReact className="w-14 h-14" /> },
-        { name: 'NodeJS', icon: <DiNodejs className="w-14 h-14" /> },
-        { name: 'Firebase', icon: <SiFirebase className="w-14 h-14" /> },
-        { name: 'Appwrite', icon: <SiAppwrite className="w-14 h-14" /> },
-        { name: 'Clerk', icon: <SiClerk className="w-14 h-14" /> },
-        { name: 'C', icon: <SiC className="w-14 h-14" /> },
-        { name: 'C++', icon: <SiCplusplus className="w-14 h-14" /> },
-        { name: 'Java', icon: <DiJava className="w-14 h-14" /> },
-        { name: 'Python', icon: <DiPython className="w-14 h-14" /> },
-        { name: 'TypeScript', icon: <SiTypescript className="w-14 h-14" /> },
-        { name: 'NextJS', icon: <SiNextdotjs className="w-14 h-14" /> },
-        { name: 'Tailwind', icon: <SiTailwindcss className="w-14 h-14" /> },
-        { name: 'SQL', icon: <BiData className="w-14 h-14" /> },
+        { name: 'MongoDB', icon: <DiMongodb className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'Express', icon: <SiExpress className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'React', icon: <DiReact className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'NodeJS', icon: <DiNodejs className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'Firebase', icon: <SiFirebase className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'Appwrite', icon: <SiAppwrite className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'Clerk', icon: <SiClerk className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'C', icon: <SiC className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'C++', icon: <SiCplusplus className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'Java', icon: <DiJava className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'Python', icon: <DiPython className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'TypeScript', icon: <SiTypescript className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'NextJS', icon: <SiNextdotjs className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'Tailwind', icon: <SiTailwindcss className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
+        { name: 'SQL', icon: <BiData className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" /> },
     ];
 
     return (
-        <section id="Skills" className="min-h-screen bg-black relative py-20">
+        <section id="Skills" className="min-h-screen bg-black relative py-16 sm:py-20">
             <div className="absolute inset-0 bg-gradient-to-br from-[#0B2447] via-[#19376D] to-[#205295] opacity-40" />
             
-            <div className="relative z-10 max-w-7xl mx-auto px-6">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
                 <motion.h2 
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-[#205295] to-[#2C74B3] text-transparent bg-clip-text"
+                    className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-[#205295] to-[#2C74B3] text-transparent bg-clip-text"
                 >
                     Technical Skills
                 </motion.h2>
@@ -79,26 +79,26 @@ const Skills = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+                    className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 sm:gap-4 md:gap-6"
                 >
                     {skills.map((skill) => (
                         <motion.div
                             key={skill.name}
                             variants={item}
                             whileHover={{ scale: 1.05 }}
-                            className="group flex flex-col items-center p-6 rounded-xl bg-black/40 backdrop-blur-md border border-[#205295]/30 hover:border-[#2C74B3] transition-all"
+                            className="group flex flex-col items-center p-3 sm:p-4 md:p-6 rounded-lg bg-black/40 backdrop-blur-md border border-[#205295]/30 hover:border-[#2C74B3] transition-all"
                         >
                             <motion.div 
                                 whileHover={{ rotate: 360 }}
                                 transition={{ duration: 0.6 }}
-                                className="text-[#2C74B3] group-hover:text-[#205295] transition-colors mb-4"
+                                className="text-[#2C74B3] group-hover:text-[#205295] transition-colors mb-2 sm:mb-3"
                             >
                                 {skill.icon}
                             </motion.div>
-                            <h3 className="text-lg sm:text-xl font-medium text-white group-hover:text-[#2C74B3] transition-colors">
+                            <h3 className="text-sm sm:text-base md:text-lg font-medium text-white group-hover:text-[#2C74B3] transition-colors text-center">
                                 {skill.name}
                             </h3>
-                            <div className="w-full h-1 mt-4 bg-[#205295]/20 rounded-full overflow-hidden">
+                            <div className="w-full h-1 mt-2 sm:mt-3 bg-[#205295]/20 rounded-full overflow-hidden">
                                 <motion.div 
                                     initial={{ width: 0 }}
                                     whileInView={{ width: "100%" }}
