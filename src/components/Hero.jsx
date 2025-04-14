@@ -1,6 +1,8 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useRef, useEffect } from "react";
 import Pfp from "../assets/Pfp.jpg";
+import { TypeAnimation } from 'react-type-animation';
+import { IoIosArrowDown } from "react-icons/io";
 
 function Hero() {
     const containerRef = useRef(null);
@@ -36,14 +38,22 @@ function Hero() {
 
             {/* Text */}
             <div className="flex flex-col items-center lg:items-start gap-4 z-10">
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-xl md:text-2xl text-white glow-effect"
-                >
-                    A Full Stack Developer
-                </motion.p>
+                <div className="text-xl sm:text-2xl mb-8 text-gray-300">
+                    <TypeAnimation
+                        sequence={[
+                            'Full Stack Developer',
+                            2000,
+                            'UI/UX Designer',
+                            2000,
+                            'Problem Solver',
+                            2000,
+                        ]}
+                        wrapper="span"
+                        speed={50}
+                        repeat={Infinity}
+                        className="font-medium"
+                    />
+                </div>
 
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
@@ -58,13 +68,24 @@ function Hero() {
                         Specializing in building modern web applications with React, Node.js, and cloud technologies.
                         Passionate about creating seamless user experiences and scalable backend solutions.
                     </p>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-[#205295] to-[#2C74B3] text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-[#2C74B3]/50 transition-all"
-                    >
-                        View My Work
-                    </motion.button>
+                    <div className="flex gap-4 justify-center lg:justify-start">
+                        <motion.a
+                            href="#Contact"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="bg-gradient-to-r from-[#205295] to-[#2C74B3] text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-[#2C74B3]/50 transition-all"
+                        >
+                            Contact Me
+                        </motion.a>
+                        <motion.a
+                            href="#Projects"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="px-8 py-3 border border-[#205295] text-white rounded-lg font-bold hover:bg-[#205295]/10 transition-all"
+                        >
+                            View Work
+                        </motion.a>
+                    </div>
                 </motion.div>
             </div>
 
@@ -84,6 +105,17 @@ function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="w-48 sm:w-56 md:w-64 lg:w-72 rounded-full relative z-10 glass-card hover-lift"
                 />
+            </motion.div>
+
+            <motion.div 
+                className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+            >
+                <a href="#About"
+                    className="text-white cursor-pointer hover:scale-110 transition-transform">
+                    <IoIosArrowDown size={24} />
+                </a>
             </motion.div>
         </div>
     );

@@ -20,7 +20,7 @@ const projects = [
         title: "FinWise",
         subtitle: "AI-Powered Investment Platform",
         year: "2025",
-        description: "Personalized investment advisor integrating Gemini and AMFI APIs with a chatbot and financial education modules. Built with React, Tailwind, Appwrite; optimized UX using Framer Motion for seamless transitions.",
+        description: "Personalized investment advisor integrating Gemini and AMFI APIs with a chatbot and financial education modules.",
         demo: "finwise.ayush-sharma.in",
         image: finwise,
         tech: ["React", "Tailwind", "Appwrite", "Framer Motion"],
@@ -108,12 +108,19 @@ function Projects() {
                                 <div className="order-2 md:order-1">
                                     <div className="flex flex-col justify-between h-full">
                                         <div>
-                                            <motion.h3 
-                                                className="text-2xl font-bold text-white mb-2 group-hover:text-[#2C74B3] transition-colors"
-                                                whileHover={{ scale: 1.05 }}
+                                            <motion.a 
+                                                href={`https://${project.demo}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-block"
                                             >
-                                                {project.title}
-                                            </motion.h3>
+                                                <motion.h3 
+                                                    className="text-2xl font-bold text-white mb-2 group-hover:text-[#2C74B3] transition-colors"
+                                                    whileHover={{ scale: 1.05 }}
+                                                >
+                                                    {project.title}
+                                                </motion.h3>
+                                            </motion.a>
                                             <p className="text-[#205295] text-lg font-medium mb-4 cursor-default">
                                                 {project.subtitle} - {project.year}
                                             </p>
@@ -166,17 +173,24 @@ function Projects() {
                                     variants={imageVariants}
                                     whileHover="hover"
                                 >
-                                    <motion.div 
-                                        className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"
-                                        whileHover={{ opacity: 0.2 }}
-                                    />
-                                    <motion.img 
-                                        src={project.image} 
-                                        alt={project.title}
-                                        className="w-full h-full object-cover rounded-lg transform"
-                                        whileHover={{ scale: 1.1 }}
-                                        transition={{ duration: 0.4 }}
-                                    />
+                                    <motion.a 
+                                        href={`https://${project.demo}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block relative"
+                                    >
+                                        <motion.div 
+                                            className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"
+                                            whileHover={{ opacity: 0.2 }}
+                                        />
+                                        <motion.img 
+                                            src={project.image} 
+                                            alt={project.title}
+                                            className="w-full h-full object-cover rounded-lg transform"
+                                            whileHover={{ scale: 1.1 }}
+                                            transition={{ duration: 0.4 }}
+                                        />
+                                    </motion.a>
                                 </motion.div>
                             </motion.div>
                         </motion.div>
