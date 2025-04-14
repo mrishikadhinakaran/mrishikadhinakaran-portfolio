@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -31,10 +32,35 @@ function Header() {
             </span>
 
             <button 
-                className="lg:hidden text-3xl focus:outline-none cursor-pointer text-white" 
+                className="lg:hidden focus:outline-none cursor-pointer text-white relative w-6 h-6" 
                 onClick={() => setMenuOpen(!menuOpen)}
             >
-                ☰
+                <motion.span
+                    className="absolute block w-6 h-0.5 bg-white"
+                    animate={{
+                        rotate: menuOpen ? 45 : 0,
+                        y: menuOpen ? 8 : 0
+                    }}
+                    transition={{ duration: 0.2 }}
+                    style={{ top: "4px" }}
+                />
+                <motion.span
+                    className="absolute block w-6 h-0.5 bg-white"
+                    animate={{
+                        opacity: menuOpen ? 0 : 1
+                    }}
+                    transition={{ duration: 0.2 }}
+                    style={{ top: "12px" }}
+                />
+                <motion.span
+                    className="absolute block w-6 h-0.5 bg-white"
+                    animate={{
+                        rotate: menuOpen ? -45 : 0,
+                        y: menuOpen ? -8 : 0
+                    }}
+                    transition={{ duration: 0.2 }}
+                    style={{ top: "20px" }}
+                />
             </button>
 
             <ul className="hidden lg:flex flex-col md:flex-row space-x-20 z-50">
@@ -51,26 +77,43 @@ function Header() {
                 ))}
             </ul>
 
-            {menuOpen && (
-                <ul className="absolute top-16 w-full left-0 lg:hidden bg-black/90 backdrop-blur-sm flex flex-col items-center py-4 space-y-5 cursor-pointer shadow-lg">
-                    {navItems.map((item) => (
-                        <li key={item}>
-                            <a 
-                                className="text-xl text-white hover:text-gradient4 transition-all font-semibold"
-                                href={`#${item}`}
-                                onClick={handleNavClick}
+            <AnimatePresence>
+                {menuOpen && (
+                    <motion.ul
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-16 w-full left-0 lg:hidden bg-black/90 backdrop-blur-sm flex flex-col items-center py-4 space-y-5 cursor-pointer shadow-lg"
+                    >
+                        {navItems.map((item, i) => (
+                            <motion.li 
+                                key={item}
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1 }}
                             >
-                                {item}
-                            </a>
-                        </li>
-                    ))}
-                    <li>
-                        <button className="bg-gradient-to-r from-gradient3 to-gradient4 text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-gradient4/50 transition-all">
-                            Download CV
-                        </button>
-                    </li>
-                </ul>
-            )}
+                                <a 
+                                    className="text-xl text-white hover:text-gradient4 transition-all font-semibold"
+                                    href={`#${item}`}
+                                    onClick={handleNavClick}
+                                >
+                                    {item}
+                                </a>
+                            </motion.li>
+                        ))}
+                        <motion.li
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: navItems.length * 0.1 }}
+                        >
+                            <button className="bg-gradient-to-r from-gradient3 to-gradient4 text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-gradient4/50 transition-all">
+                                Download CV
+                            </button>
+                        </motion.li>
+                    </motion.ul>
+                )}
+            </AnimatePresence>
 
             <button className="hidden lg:block bg-gradient-to-r from-gradient3 to-gradient4 text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-gradient4/50 hover:scale-105 hover:cursor-pointer transition-all">
                 Download CV

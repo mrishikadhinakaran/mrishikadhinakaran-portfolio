@@ -28,7 +28,7 @@ function Hero() {
     return (
         <div
             ref={containerRef}
-            className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20"
+            className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20 pt-20 sm:pt-24"
         >
             {/* Background blobs */}
             <div className="absolute inset-0 z-0">
