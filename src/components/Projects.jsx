@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import hireorbit from "../assets/hireorbit.png";
 import finwise from "../assets/finwise.png";
@@ -49,6 +49,13 @@ const projects = [
 ];
 
 function Projects() {
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
+
     const cardVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { 
@@ -79,6 +86,11 @@ function Projects() {
 
     return (
         <div id="Projects" className="bg-black min-h-screen py-20 px-6 relative">
+            <motion.div
+                className="fixed top-0 left-0 right-0 h-1 bg-[#2C74B3] origin-left z-50"
+                style={{ scaleX }}
+            />
+            
             <div className="absolute inset-0 bg-gradient-to-br from-[#0B2447] via-[#19376D] to-[#205295] opacity-40" />
             
             <div className="relative z-10 max-w-7xl mx-auto">
