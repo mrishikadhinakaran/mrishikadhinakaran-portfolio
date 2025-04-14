@@ -1,33 +1,17 @@
-import { motion } from "motion/react"
-import Pfp from "../assets/Pfp.jpg"
+import { motion } from "framer-motion";
+import Pfp from "../assets/Pfp.jpg";
+
 function Hero() {
     return (
-        <div className="relative flex flex-col lg:flex-row items-center justify-center h-screen px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20">
-            {/* Background Animation */}
-            <motion.div
-                className="absolute inset-0 opacity-20"
-                initial={{ backgroundSize: "100%" }}
-                animate={{
-                    background: [
-                        "radial-gradient(circle at 0% 0%, #FF6B6B 0%, transparent 50%)",
-                        "radial-gradient(circle at 100% 100%, #4ECDC4 0%, transparent 50%)",
-                        "radial-gradient(circle at 0% 100%, #45B7D1 0%, transparent 50%)",
-                        "radial-gradient(circle at 100% 0%, #96C93D 0%, transparent 50%)"
-                    ]
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                }}
-            />
-
+        <div className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20">
+            <div className="absolute inset-0 bg-gradient-to-br from-gradient1 via-gradient2 to-gradient3 opacity-80" />
+            
             <div className="flex flex-col items-center lg:items-start gap-2 z-10">
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-white text-3xl md:text-2xl animate-pulse"
+                    className="text-3xl md:text-2xl text-white glow-effect"
                 >
                     A MERN Stack developer
                 </motion.p>
@@ -37,26 +21,30 @@ function Hero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <h1 className="text-5xl sm:text-7xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-400 font-bold">
+                    <h1 className="text-5xl sm:text-7xl lg:text-9xl font-bold text-white">
                         Hello!, I&apos;m <br />
-                        Raghav Katta
+                        <span className="gradient-text">Raghav Katta</span>
                     </h1>
                 </motion.div>
             </div>
-<div className="flex">
-<motion.img
-                src={Pfp}
-                alt="Profile Pic"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="w-60 sm:w-100 md:w-110 sm:items-center lg:w-[30rem] mt-[2rem] rounded-full lg: mb-6 lg:mb-0 hover:shadow-2xl hover:shadow-orange-500/50 transition-shadow duration-300 "
+
+            <motion.div 
+                className="relative"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-            />
-</div>
-            
+            >
+                <div className="absolute inset-0 bg-gradient-to-r from-gradient2 via-gradient3 to-gradient4 rounded-full blur-xl opacity-30" />
+                <motion.img
+                    src={Pfp}
+                    alt="Profile Pic"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="w-60 sm:w-100 md:w-110 lg:w-[30rem] mt-[2rem] rounded-full relative z-10 glass-card hover-lift"
+                />
+            </motion.div>
         </div>
-    )
+    );
 }
-export default Hero
+
+export default Hero;

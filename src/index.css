@@ -1,1 +1,102 @@
 @import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1s infinite;
+  }
+
+  .cosmic-bg {
+    background: linear-gradient(to bottom, #0a0220, #1a0b2e, #261137);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nebula {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(247, 38, 174, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(135, 114, 255, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(151, 125, 255, 0.1) 0%, transparent 50%);
+    filter: blur(30px);
+    mix-blend-mode: screen;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .cosmic-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cosmic-gradient {
+    background: linear-gradient(45deg, #F726AE, #8772FF, #977DFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glow {
+    text-shadow: 0 0 10px rgba(247, 38, 174, 0.5),
+                 0 0 20px rgba(135, 114, 255, 0.3);
+  }
+
+  .glass-card {
+    background: rgba(20, 66, 114, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(32, 82, 149, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .modern-gradient {
+    background: linear-gradient(135deg, #000000, #0A2647, #144272);
+    position: relative;
+  }
+
+  .glow-effect {
+    text-shadow: 0 0 10px rgba(32, 82, 149, 0.5);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #144272, #205295);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .gradient-border {
+    border: double 1px transparent;
+    background-image: linear-gradient(black, black), 
+                      linear-gradient(135deg, #0A2647, #205295);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+}
