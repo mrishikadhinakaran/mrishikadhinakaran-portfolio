@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import logo from "../assets/Logo.png";
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -24,12 +24,16 @@ function Header() {
     const navItems = ["Home", "Projects", "Technologies", "About", "Contact"];
     
     return (
-        <nav className={`fixed w-full flex items-center justify-between px-10 py-4 transition-all duration-300 z-50 ${
+        <nav className={`fixed w-full flex items-center justify-between px-4 sm:px-10 py-4 transition-all duration-300 z-50 ${
             scrolled ? 'bg-black/70 backdrop-blur-sm shadow-lg' : 'bg-transparent'
         }`}>
-            <span className="text-2xl font-bold text-white tracking-wider">
-                Raghav Katta
-            </span>
+            <div className="flex items-center">
+                <img 
+                    src={logo} 
+                    alt="Logo" 
+                    className="h-8 sm:h-16 w-auto object-contain"
+                />
+            </div>
 
             <button 
                 className="lg:hidden focus:outline-none cursor-pointer text-white relative w-6 h-6" 
