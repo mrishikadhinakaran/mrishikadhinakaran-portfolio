@@ -1,7 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Header() {
-    const [menuOpen, setMenuOpen] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 0;
+            setScrolled(isScrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     
     const handleNavClick = () => {
         if (menuOpen) {
@@ -12,7 +23,9 @@ function Header() {
     const navItems = ["Home", "Projects", "Technologies", "About", "Contact"];
     
     return (
-        <nav className="fixed w-full flex items-center justify-between px-10 py-4 bg-black/70 backdrop-blur-sm shadow-lg z-50">
+        <nav className={`fixed w-full flex items-center justify-between px-10 py-4 transition-all duration-300 z-50 ${
+            scrolled ? 'bg-black/70 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+        }`}>
             <span className="text-2xl font-bold text-white tracking-wider">
                 Raghav Katta
             </span>
