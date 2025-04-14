@@ -104,7 +104,7 @@ function Projects() {
                 </motion.h2>
 
                 <div className="grid gap-12">
-                    {projects.map((project, index) => (
+                    {projects.map((project) => (
                         <motion.div
                             key={project.title}
                             variants={cardVariants}
