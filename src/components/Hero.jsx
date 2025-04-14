@@ -1,19 +1,48 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useRef, useEffect } from "react";
 import Pfp from "../assets/Pfp.jpg";
 
 function Hero() {
+    const containerRef = useRef(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const rotateX = useTransform(y, [0, 1], [10, -10]);
+    const rotateY = useTransform(x, [0, 1], [-10, 10]);
+
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            const bounds = containerRef.current.getBoundingClientRect();
+            const xVal = (e.clientX - bounds.left) / bounds.width;
+            const yVal = (e.clientY - bounds.top) / bounds.height;
+            x.set(xVal);
+            y.set(yVal);
+        };
+
+        const el = containerRef.current;
+        el.addEventListener("mousemove", handleMouseMove);
+        return () => el.removeEventListener("mousemove", handleMouseMove);
+    }, [x, y]);
+
     return (
-        <div className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20">
-            <div className="absolute inset-0 bg-gradient-to-br from-gradient1 via-gradient2 to-gradient3 opacity-80" />
-            
-            <div className="flex flex-col items-center lg:items-start gap-2 z-10">
+        <div
+            ref={containerRef}
+            className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20"
+        >
+            {/* Abstract background blobs */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-r from-gradient2 to-gradient3 blur-3xl opacity-30 top-[10%] left-[5%] animate-pulse" />
+                <div className="absolute w-[300px] h-[300px] rounded-full bg-gradient-to-r from-gradient1 to-gradient4 blur-2xl opacity-20 bottom-[10%] right-[10%] animate-pulse-slow" />
+            </div>
+
+            {/* Text */}
+            <div className="flex flex-col items-center lg:items-start gap-4 z-10">
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-3xl md:text-2xl text-white glow-effect"
+                    className="text-xl md:text-2xl text-white glow-effect"
                 >
-                    A MERN Stack developer
+                    A Full Stack Developer
                 </motion.p>
 
                 <motion.div
@@ -21,26 +50,39 @@ function Hero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <h1 className="text-5xl sm:text-7xl lg:text-9xl font-bold text-white">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
                         Hello!, I&apos;m <br />
                         <span className="gradient-text">Raghav Katta</span>
                     </h1>
+                    <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-6">
+                        Specializing in building modern web applications with React, Node.js, and cloud technologies.
+                        Passionate about creating seamless user experiences and scalable backend solutions.
+                    </p>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-gradient-to-r from-[#205295] to-[#2C74B3] text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-[#2C74B3]/50 transition-all"
+                    >
+                        View My Work
+                    </motion.button>
                 </motion.div>
             </div>
 
-            <motion.div 
-                className="relative"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            {/* Profile with holographic ring and 3D tilt */}
+            <motion.div
+                className="relative z-10"
+                style={{ rotateX, rotateY }}
             >
-                <div className="absolute inset-0 bg-gradient-to-r from-gradient2 via-gradient3 to-gradient4 rounded-full blur-xl opacity-30" />
+                {/* Holographic animated aura ring */}
+                <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-gradient3 via-gradient2 to-gradient1 blur-2xl opacity-50 animate-spin-slow" />
+
                 <motion.img
                     src={Pfp}
                     alt="Profile Pic"
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="w-60 sm:w-100 md:w-110 lg:w-[30rem] mt-[2rem] rounded-full relative z-10 glass-card hover-lift"
+                    className="w-48 sm:w-56 md:w-64 lg:w-72 rounded-full relative z-10 glass-card hover-lift"
                 />
             </motion.div>
         </div>
