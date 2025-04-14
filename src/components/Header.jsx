@@ -59,7 +59,7 @@ function Header() {
                 </ul>
             )}
 
-            <button className="hidden lg:block bg-gradient-to-r from-gradient3 to-gradient4 text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-gradient4/50 transition-all">
+            <button className="hidden lg:block bg-gradient-to-r from-gradient3 to-gradient4 text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-gradient4/50 hover:scale-105 hover:cursor-pointer transition-all">
                 Download CV
             </button>
         </nav>

@@ -13,7 +13,7 @@ const projects = [
         description: "AI-enhanced platform to assist hackathon teams in ideation, project setup, and submissions. Features intelligent suggestion engine and team collaboration dashboard.",
         demo: "hackyours.vercel.app",
         image: hackyours,
-        tech: ["AI", "React", "Node.js", "MongoDB"],
+        tech: ["Gemini API", "React", "Node.js", "MongoDB"],
         color: "#00FF00"
     },
     {

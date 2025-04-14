@@ -30,13 +30,13 @@ function Hero() {
             ref={containerRef}
             className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20"
         >
-            {/* Abstract background blobs */}
+            {/* Background blobs */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-r from-gradient2 to-gradient3 blur-3xl opacity-30 top-[10%] left-[5%] animate-pulse" />
                 <div className="absolute w-[300px] h-[300px] rounded-full bg-gradient-to-r from-gradient1 to-gradient4 blur-2xl opacity-20 bottom-[10%] right-[10%] animate-pulse-slow" />
             </div>
 
-            {/* Text */}
+            {/* Text Section */}
             <div className="flex flex-col items-center lg:items-start gap-4 z-10">
                 <div className="text-xl sm:text-2xl mb-8 text-gray-300">
                     <TypeAnimation
@@ -89,31 +89,37 @@ function Hero() {
                 </motion.div>
             </div>
 
-            {/* Profile with holographic ring and 3D tilt */}
+            {/* Profile + Glow + 3D Tilt */}
             <motion.div
                 className="relative z-10"
                 style={{ rotateX, rotateY }}
             >
-                {/* Holographic animated aura ring */}
-                <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-gradient3 via-gradient2 to-gradient1 blur-2xl opacity-50 animate-spin-slow" />
+                {/* Glowing layers */}
+                <div className="absolute -inset-20 rounded-full bg-[#00FFFF] blur-[100px] opacity-40 animate-pulse z-0" />
+                <div className="absolute -inset-28 rounded-full bg-[#2C74B3] blur-[120px] opacity-30 animate-pulse-slow z-0" />
+                <div className="absolute -inset-36 rounded-full bg-[#7F00FF] blur-[160px] opacity-20 animate-pulse-slow z-0" />
 
+                {/* Spinning aura ring */}
+                <div className="absolute -inset-10 rounded-full bg-gradient-to-r from-gradient3 via-gradient2 to-gradient1 blur-2xl opacity-70 animate-spin-slow z-0" />
+
+                {/* Profile image */}
                 <motion.img
                     src={Pfp}
                     alt="Profile Pic"
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="w-48 sm:w-56 md:w-64 lg:w-72 rounded-full relative z-10 glass-card hover-lift"
+                    className="w-64 sm:w-72 md:w-80 lg:w-96 rounded-full relative z-10 glass-card hover-lift"
                 />
             </motion.div>
 
-            <motion.div 
+            {/* Scroll icon */}
+            <motion.div
                 className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
             >
-                <a href="#About"
-                    className="text-white cursor-pointer hover:scale-110 transition-transform">
+                <a href="#About" className="text-white cursor-pointer hover:scale-110 transition-transform">
                     <IoIosArrowDown size={24} />
                 </a>
             </motion.div>
