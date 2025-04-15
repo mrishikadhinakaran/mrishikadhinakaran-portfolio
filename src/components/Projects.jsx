@@ -1,9 +1,9 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import hireorbit from "../assets/hireorbit.png";
-import finwise from "../assets/finwise.png";
-import hackyours from "../assets/hackyours.png";
-import caremate from "../assets/caremate.png";
+import hireorbit from "/Hireorbit.png";
+import finwise from "../assets/Finwise.png";
+import hackyours from "../assets/Hackyours.png";
+import caremate from "../assets/Caremate.png";
 
 const projects = [
     {
@@ -58,8 +58,8 @@ function Projects() {
 
     const cardVariants = {
         hidden: { opacity: 0, y: 50 },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             y: 0,
             transition: {
                 duration: 0.6,
@@ -70,14 +70,14 @@ function Projects() {
     };
 
     const imageVariants = {
-        hover: { 
+        hover: {
             scale: 1.05,
             transition: { duration: 0.3 }
         }
     };
 
     const linkVariants = {
-        hover: { 
+        hover: {
             x: 5,
             scale: 1.1,
             transition: { type: "spring", stiffness: 400 }
@@ -90,9 +90,9 @@ function Projects() {
                 className="fixed top-0 left-0 right-0 h-1 bg-[#2C74B3] origin-left z-50"
                 style={{ scaleX }}
             />
-            
+
             <div className="absolute inset-0 bg-gradient-to-br from-[#0B2447] via-[#19376D] to-[#205295] opacity-40" />
-            
+
             <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
@@ -120,13 +120,13 @@ function Projects() {
                                 <div className="order-2 md:order-1">
                                     <div className="flex flex-col justify-between h-full">
                                         <div>
-                                            <motion.a 
+                                            <motion.a
                                                 href={`https://${project.demo}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="inline-block"
                                             >
-                                                <motion.h3 
+                                                <motion.h3
                                                     className="text-2xl font-bold text-white mb-2 group-hover:text-[#2C74B3] transition-colors"
                                                     whileHover={{ scale: 1.05 }}
                                                 >
@@ -180,23 +180,23 @@ function Projects() {
                                         </div>
                                     </div>
                                 </div>
-                                <motion.div 
+                                <motion.div
                                     className="order-1 md:order-2 relative overflow-hidden rounded-lg"
                                     variants={imageVariants}
                                     whileHover="hover"
                                 >
-                                    <motion.a 
+                                    <motion.a
                                         href={`https://${project.demo}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="block relative"
                                     >
-                                        <motion.div 
+                                        <motion.div
                                             className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"
                                             whileHover={{ opacity: 0.2 }}
                                         />
-                                        <motion.img 
-                                            src={project.image} 
+                                        <motion.img
+                                            src={project.image}
                                             alt={project.title}
                                             className="w-full h-full object-cover rounded-lg transform"
                                             whileHover={{ scale: 1.1 }}
