@@ -2,7 +2,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import hireorbit from "../assets/Hireorbit.png";
 import finwise from "../assets/Finwise.png";
-import hackyours from "../assets/Hackyours.png";
+import hackyours from "../assets/HackYours.png";
 import caremate from "../assets/Caremate.png";
 
 const projects = [

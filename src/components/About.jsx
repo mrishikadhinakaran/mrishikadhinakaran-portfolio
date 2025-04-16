@@ -14,7 +14,7 @@ function About() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-[#205295] to-[#2C74B3] text-transparent bg-clip-text">About Me</h2>
           <p className="text-base md:text-lg leading-relaxed text-white/90 mb-4">
-            Hi, I'm <span className="text-[#2C74B3] font-bold">Raghav Katta</span>, a passionate MERN Stack Developer who loves 
+            Hi, I&apos;m <span className="text-[#2C74B3] font-bold">Raghav Katta</span>, a passionate MERN Stack Developer who loves 
             building dynamic, high-performance web applications. With expertise in 
             <span className="text-[#2C74B3] font-bold"> MongoDB</span>, <span className="text-[#2C74B3] font-bold"> Express.js</span>, 
             <span className="text-[#2C74B3] font-bold"> React</span>, and <span className="text-[#2C74B3] font-bold"> Node.js</span>, I enjoy crafting seamless user experiences 
@@ -22,15 +22,15 @@ function About() {
           </p>
           <p className="text-base md:text-lg text-white/90 mb-6">
             Beyond coding, I thrive on solving complex problems and staying up-to-date with the latest web technologies. 
-            Whether it's developing real-time applications, optimizing performance, or experimenting with new frameworks, 
-            I'm always eager to push boundaries.
+            Whether it&apos;s developing real-time applications, optimizing performance, or experimenting with new frameworks, 
+            I&apos;m always eager to push boundaries.
           </p>
           <motion.p 
             className="text-lg font-bold text-[#2C74B3]"
             animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            Let's connect and build something amazing!
+            Let&apos;s connect and build something amazing!
           </motion.p>
         </motion.div>
 
