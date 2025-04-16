@@ -14,8 +14,8 @@ export default {
           text: '#ffffff'
         },
         light: {
-          bg: '#ffffff',
-          text: '#000000'
+          bg: '#F3F4F6',
+          text:  '#111827',
         }
       },
       fontFamily: {
