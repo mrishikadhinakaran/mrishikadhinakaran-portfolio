@@ -98,9 +98,9 @@ function Projects() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2 }}
-                    className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-[#205295] to-[#2C74B3] text-transparent bg-clip-text cursor-default"
+                    className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-[#205295] to-[#2C74B3] text-transparent bg-clip-text cursor-default animate-pulse"
                 >
-                    Featured Projects
+                    My Projects
                 </motion.h2>
 
                 <div className="grid gap-12">
