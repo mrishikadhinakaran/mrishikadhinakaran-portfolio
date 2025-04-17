@@ -69,14 +69,14 @@ const Skills = () => {
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-[#205295] to-[#2C74B3] text-transparent bg-clip-text"
+                    className="text-3xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-[#205295] to-[#2C74B3] text-transparent bg-clip-text"
                 >
                     Technical Skills
                 </motion.h2>
 
                 <div className="light-bg text-primaryLight dark:bg-[#0A2647] dark:text-white p-6 rounded-xl shadow-md hover-lift">
-                    <h1 className="text-3xl font-bold gradient-text">Technical Skills</h1>
-                    <p className="mt-2 light-glow dark:glow-effect">Explore my expertise in various technologies.</p>
+                    
+                    <p className="mt-2 text-xl font-bold light-glow dark:glow-effect">Explore my expertise in various technologies.</p>
                     <motion.div 
                         variants={container}
                         initial="hidden"
