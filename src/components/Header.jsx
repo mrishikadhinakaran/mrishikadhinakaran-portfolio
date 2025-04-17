@@ -112,7 +112,7 @@ function Header() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: navItems.length * 0.1 }}
                         >
-                            <button className="bg-gradient-to-r from-gradient3 to-gradient4 text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-gradient4/50 transition-all">
+                            <button className="bg-gradient-to-r from-gradient3 to-gradient4 text-white text-lg font-semibold px-5 py-2 rounded-lg shadow-lg hover:shadow-gradient4/50 transition-all">
                                 Download CV
                             </button>
                         </motion.li>
@@ -120,7 +120,7 @@ function Header() {
                 )}
             </AnimatePresence>
 
-            <button className="hidden lg:block bg-gradient-to-r from-gradient3 to-gradient4 text-white font-bold px-5 py-2 rounded-lg shadow-lg hover:shadow-gradient4/50 hover:scale-105 hover:cursor-pointer transition-all">
+            <button className="hidden lg:block bg-gradient-to-r from-gradient3 to-gradient4 text-white text-lg font-semibold px-5 py-2 rounded-lg text-shadow-lg hover:shadow-gradient4/50 hover:scale-105 hover:cursor-pointer transition-all">
                 Download CV
             </button>
         </nav>
