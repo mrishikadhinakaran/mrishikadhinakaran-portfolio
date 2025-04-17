@@ -31,6 +31,7 @@ function Header() {
         <nav className={`fixed w-full flex items-center justify-between px-4 sm:px-10 py-4 transition-all duration-300 z-50 ${
             scrolled ? 'bg-black/70 backdrop-blur-sm shadow-lg' : 'bg-transparent'
         }`}>
+            {/* Logo */}
             <div className="flex items-center">
                 <img 
                     src={logo} 
@@ -39,38 +40,7 @@ function Header() {
                 />
             </div>
 
-            <button 
-                className="lg:hidden focus:outline-none cursor-pointer text-white relative w-6 h-6" 
-                onClick={() => setMenuOpen(!menuOpen)}
-            >
-                <motion.span
-                    className="absolute block w-6 h-0.5 bg-white"
-                    animate={{
-                        rotate: menuOpen ? 45 : 0,
-                        y: menuOpen ? 8 : 0
-                    }}
-                    transition={{ duration: 0.2 }}
-                    style={{ top: "4px" }}
-                />
-                <motion.span
-                    className="absolute block w-6 h-0.5 bg-white"
-                    animate={{
-                        opacity: menuOpen ? 0 : 1
-                    }}
-                    transition={{ duration: 0.2 }}
-                    style={{ top: "12px" }}
-                />
-                <motion.span
-                    className="absolute block w-6 h-0.5 bg-white"
-                    animate={{
-                        rotate: menuOpen ? -45 : 0,
-                        y: menuOpen ? -8 : 0
-                    }}
-                    transition={{ duration: 0.2 }}
-                    style={{ top: "20px" }}
-                />
-            </button>
-
+            {/* Desktop Nav */}
             <ul className="hidden lg:flex flex-col md:flex-row space-x-20 z-50">
                 {navItems.map((item) => (
                     <li key={item}>
@@ -85,6 +55,59 @@ function Header() {
                 ))}
             </ul>
 
+            {/* Right side: Theme toggle + Hamburger */}
+            <div className="flex items-center lg:hidden">
+                {/* Mobile Theme Toggle */}
+                <button 
+                    onClick={toggleTheme} 
+                    className="mr-6 text-white text-2xl hover:scale-105 transition-all"
+                >
+                    {isDark ? <FaSun /> : <FaMoon />}
+                </button>
+
+                {/* Hamburger */}
+                <button 
+                    className="focus:outline-none cursor-pointer text-white relative w-6 h-6" 
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    <motion.span
+                        className="absolute block w-6 h-0.5 bg-white"
+                        animate={{
+                            rotate: menuOpen ? 45 : 0,
+                            y: menuOpen ? 8 : 0
+                        }}
+                        transition={{ duration: 0.2 }}
+                        style={{ top: "4px" }}
+                    />
+                    <motion.span
+                        className="absolute block w-6 h-0.5 bg-white"
+                        animate={{
+                            opacity: menuOpen ? 0 : 1
+                        }}
+                        transition={{ duration: 0.2 }}
+                        style={{ top: "12px" }}
+                    />
+                    <motion.span
+                        className="absolute block w-6 h-0.5 bg-white"
+                        animate={{
+                            rotate: menuOpen ? -45 : 0,
+                            y: menuOpen ? -8 : 0
+                        }}
+                        transition={{ duration: 0.2 }}
+                        style={{ top: "20px" }}
+                    />
+                </button>
+            </div>
+
+            {/* Desktop Theme Toggle */}
+            <button 
+                onClick={toggleTheme} 
+                className="ml-4 text-white text-2xl hover:scale-105 hover:cursor-pointer transition-all hidden lg:block"
+            >
+                {isDark ? <FaSun /> : <FaMoon />}
+            </button>
+
+            {/* Mobile Nav Menu */}
             <AnimatePresence>
                 {menuOpen && (
                     <motion.ul
@@ -110,29 +133,11 @@ function Header() {
                                 </a>
                             </motion.li>
                         ))}
-                        <motion.li
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: navItems.length * 0.1 }}
-                        >
-                            <button 
-                                onClick={toggleTheme} 
-                                className="ml-4 text-white text-2xl hover:scale-105 hover:cursor-pointer transition-all"
-                            >
-                                {isDark ? <FaSun /> : <FaMoon />}
-                            </button>
-                        </motion.li>
                     </motion.ul>
                 )}
             </AnimatePresence>
-
-            <button 
-                onClick={toggleTheme} 
-                className="ml-4 text-white text-2xl hover:scale-105 hover:cursor-pointer transition-all hidden lg:block"
-            >
-                {isDark ? <FaSun /> : <FaMoon />}
-            </button>
         </nav>
     )
 }
-export default Header
+
+export default Header;
