@@ -74,41 +74,45 @@ const Skills = () => {
                     Technical Skills
                 </motion.h2>
 
-                <motion.div 
-                    variants={container}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 sm:gap-4 md:gap-6"
-                >
-                    {skills.map((skill) => (
-                        <motion.div
-                            key={skill.name}
-                            variants={item}
-                            whileHover={{ scale: 1.05 }}
-                            className="group flex flex-col items-center p-3 sm:p-4 md:p-6 rounded-lg bg-black/40 backdrop-blur-md border border-[#205295]/30 hover:border-[#2C74B3] transition-all"
-                        >
-                            <motion.div 
-                                whileHover={{ rotate: 360 }}
-                                transition={{ duration: 0.6 }}
-                                className="text-[#2C74B3] group-hover:text-[#205295] transition-colors mb-2 sm:mb-3"
+                <div className="light-bg text-primaryLight dark:bg-[#0A2647] dark:text-white p-6 rounded-xl shadow-md hover-lift">
+                    <h1 className="text-3xl font-bold gradient-text">Technical Skills</h1>
+                    <p className="mt-2 light-glow dark:glow-effect">Explore my expertise in various technologies.</p>
+                    <motion.div 
+                        variants={container}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 sm:gap-4 md:gap-6"
+                    >
+                        {skills.map((skill) => (
+                            <motion.div
+                                key={skill.name}
+                                variants={item}
+                                whileHover={{ scale: 1.05 }}
+                                className="group flex flex-col items-center p-3 sm:p-4 md:p-6 rounded-lg light-bg dark:bg-[#0A2647] dark:border-[#205295]/30 hover:border-[#2C74B3] transition-all"
                             >
-                                {skill.icon}
-                            </motion.div>
-                            <h3 className="text-sm sm:text-base md:text-lg font-medium text-white group-hover:text-[#2C74B3] transition-colors text-center">
-                                {skill.name}
-                            </h3>
-                            <div className="w-full h-1 mt-2 sm:mt-3 bg-[#205295]/20 rounded-full overflow-hidden">
                                 <motion.div 
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: "100%" }}
-                                    transition={{ duration: 0.8, delay: 0.2 }}
-                                    className="h-full bg-gradient-to-r from-[#205295] to-[#2C74B3]" 
-                                />
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                                    whileHover={{ rotate: 360 }}
+                                    transition={{ duration: 0.6 }}
+                                    className="text-[#2C74B3] group-hover:text-[#205295] transition-colors mb-2 sm:mb-3"
+                                >
+                                    {skill.icon}
+                                </motion.div>
+                                <h3 className="text-sm sm:text-base md:text-lg font-medium text-primaryLight dark:text-white group-hover:text-[#2C74B3] transition-colors text-center">
+                                    {skill.name}
+                                </h3>
+                                <div className="w-full h-1 mt-2 sm:mt-3 bg-[#205295]/20 rounded-full overflow-hidden">
+                                    <motion.div 
+                                        initial={{ width: 0 }}
+                                        whileInView={{ width: "100%" }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                        className="h-full bg-gradient-to-r from-[#205295] to-[#2C74B3]" 
+                                    />
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
