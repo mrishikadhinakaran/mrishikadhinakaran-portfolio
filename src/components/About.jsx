@@ -1,6 +1,14 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+
 
 function About() {
+  const [showToast, setShowToast] = useState(false);
+  const handleSuccess = () => {
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
+  
   return (
     <section className="min-h-screen px-3 py-12 flex items-center relative overflow-hidden bg-black">
       <div className="absolute inset-0 bg-gradient-to-br from-[#0B2447] via-[#19376D] to-[#205295] opacity-40" />
@@ -42,22 +50,42 @@ function About() {
           className="p-6 rounded-xl bg-black/40 backdrop-blur-md border border-[#205295]/30"
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-[#205295] to-[#2C74B3] text-transparent bg-clip-text">Contact Me</h2>
-          <form className="flex flex-col gap-4">
+
+          <AnimatePresence>
+  {showToast && (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      className="bg-green-600 text-white px-4 py-2 rounded-md shadow-md text-sm mb-4 w-full text-center"
+    >
+      ✅ Message sent successfully!
+    </motion.div>
+  )}
+</AnimatePresence>
+          <form className="flex flex-col gap-4"
+          action="https://formspree.io/f/mgvageav"
+          target="dummyFrame"
+          method="POST"
+          onSubmit={()=> handleSuccess()}>
             <motion.input 
               whileFocus={{ scale: 1.02 }}
               type="text" 
+              name="name"
               placeholder="Your Name" 
               className="bg-black/50 py-2 px-4 rounded-lg text-white placeholder:text-white/50 border border-[#205295]/50 focus:border-[#2C74B3] outline-none"
             />
             <motion.input 
               whileFocus={{ scale: 1.02 }}
-              type="email" 
+              type="email"
+              name="email" 
               placeholder="Your Email"  
               className="bg-black/50 py-2 px-4 rounded-lg text-white placeholder:text-white/50 border border-[#205295]/50 focus:border-[#2C74B3] outline-none"
             />
             <motion.textarea 
               whileFocus={{ scale: 1.02 }}
               placeholder="Your Message" 
+              name="message"
               className="bg-black/50 py-2 px-4 rounded-lg text-white placeholder:text-white/50 border border-[#205295]/50 focus:border-[#2C74B3] outline-none h-28 resize-none"
             />
             <motion.button 
@@ -67,6 +95,8 @@ function About() {
             >
               Send Message
             </motion.button>
+              {/* This invisible iframe prevents redirection */}
+  <iframe name="dummyFrame" style={{ display: "none" }}></iframe>
           </form>
         </motion.div>
       </div>
