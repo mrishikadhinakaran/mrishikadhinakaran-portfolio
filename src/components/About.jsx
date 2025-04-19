@@ -1,8 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useRef,useState } from "react";
 
 
 function About() {
+  const formRef = useRef(null);
   const [showToast, setShowToast] = useState(false);
   const handleSuccess = () => {
     setShowToast(true);
@@ -64,10 +65,14 @@ function About() {
   )}
 </AnimatePresence>
           <form className="flex flex-col gap-4"
+          ref={formRef}
           action="https://formspree.io/f/mgvageav"
           target="dummyFrame"
           method="POST"
-          onSubmit={()=> handleSuccess()}>
+          onSubmit={()=> {handleSuccess()
+          setTimeout(() => formRef.current.reset(), 100);
+          }}
+          >
             <motion.input 
               whileFocus={{ scale: 1.02 }}
               type="text" 
@@ -91,7 +96,7 @@ function About() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-[#205295] to-[#2C74B3] text-white font-bold px-6 py-2 rounded-lg shadow-lg hover:shadow-[#2C74B3]/50 transition-all"
+              className="bg-gradient-to-r from-[#205295] to-[#2C74B3] text-white font-bold px-6 py-2 cursor-pointer rounded-lg shadow-lg hover:shadow-[#2C74B3]/50 transition-all"
             >
               Send Message
             </motion.button>
