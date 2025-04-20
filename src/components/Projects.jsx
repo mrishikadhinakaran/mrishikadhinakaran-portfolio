@@ -11,7 +11,7 @@ const projects = [
         subtitle: "AI-Powered Hackathon Helper",
         year: "2025",
         description: "AI-enhanced platform to assist hackathon teams in ideation, project setup, and submissions. Features intelligent suggestion engine and team collaboration dashboard.",
-        demo: "https://hackyours.raghavkatta.xyz",
+        demo: "hackyours.raghavkatta.xyz/",
         image: hackyours,
         tech: ["Gemini API", "React", "Node.js", "MongoDB"],
         color: "#00FF00"
