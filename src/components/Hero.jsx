@@ -38,7 +38,7 @@ function Hero() {
 
             {/* Text Section */}
             <div className="flex flex-col items-center lg:items-start gap-4 z-10">
-                <div className="text-xl sm:text-2xl mb-8 text-gray-300">
+                <div className="text-xl sm:text-2xl mb-1 text-gray-300">
                     <TypeAnimation
                         sequence={[
                             'Full Stack Developer',
@@ -60,7 +60,7 @@ function Hero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
                         Hello!, I&apos;m <br />
                         <span className="gradient-text">Raghav Katta</span>
                     </h1>
@@ -68,7 +68,7 @@ function Hero() {
                         Specializing in building modern web applications with React, Node.js, and cloud technologies.
                         Passionate about creating seamless user experiences and scalable backend solutions.
                     </p>
-                    <div className="flex gap-4 justify-center lg:justify-start">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <motion.a
                             href="#Contact"
                             whileHover={{ scale: 1.05 }}
