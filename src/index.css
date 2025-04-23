@@ -2,15 +2,15 @@
 
 @layer base {
     html {
-      @apply bg-white text-[#144272];
+        @apply bg-white text-[#144272];
     }
-  
+
     .dark html {
-      @apply bg-[#0A2647] text-white;
+        @apply bg-[#0A2647] text-white;
     }
-  }
-  
-  
+}
+
+
 @layer utilities {
 
     @keyframes spin-slow {
@@ -68,11 +68,13 @@
     }
 
     .gradient-text {
-        background: linear-gradient(135deg, #144272, #205295);
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        text-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
     }
+
 
     .glass-blur {
         backdrop-filter: blur(10px);

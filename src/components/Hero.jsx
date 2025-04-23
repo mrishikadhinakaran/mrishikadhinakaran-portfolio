@@ -62,7 +62,7 @@ function Hero() {
                 >
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
                         Hello!, I&apos;m <br />
-                        <span className="gradient-text">Raghav Katta</span>
+                        <span className="gradient-text animate-pulse">Raghav Katta</span>
                     </h1>
                     <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-6">
                         Specializing in building modern web applications with React, Node.js, and cloud technologies.
@@ -73,7 +73,8 @@ function Hero() {
                             href="#Contact"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-gradient-to-r from-[#205295] to-[#2C74B3] text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-[#2C74B3]/50 transition-all"
+                            className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-cyan-500/50 transition-all"
+
                         >
                             Contact Me
                         </motion.a>
@@ -81,7 +82,8 @@ function Hero() {
                             href="#Projects"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-3 border border-[#205295] text-white rounded-lg font-bold hover:bg-[#205295]/10 transition-all"
+                            className="backdrop-blur-md bg-white/10 border border-white/20 text-white font-semibold px-8 py-3 rounded-lg hover:bg-white/20 transition-all"
+
                         >
                             View Work
                         </motion.a>
