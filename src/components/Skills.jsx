@@ -46,10 +46,9 @@ export default function Skills() {
 
             <div className="max-w-7xl w-full mx-auto px-4">
                 <motion.h2
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-transparent bg-clip-text"
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-transparent bg-clip-text"
                 >
                     Technical Skills
                 </motion.h2>
@@ -67,7 +66,7 @@ export default function Skills() {
                                 className="group flex flex-col items-center justify-center p-4 h-[160px] rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md hover:shadow-cyan-500/20 transition-all overflow-hidden"
                             >
                                 <div className="absolute w-40 h-40 bg-cyan-500/10 blur-[80px] opacity-0 group-hover:opacity-20 transition-all duration-500 -z-10" />
-                                
+
                                 <motion.div
                                     className="mb-3 text-white/80 group-hover:text-cyan-400 transition-colors duration-300"
                                     whileHover={{ rotate: 360 }}
