@@ -93,7 +93,16 @@
         background-clip: text;
         color: transparent;
     }
-
+    .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+      .glass-card:hover {
+        box-shadow: 0 0 30px rgba(44, 116, 179, 0.4);
+      }
+      
 
     .glass-blur {
         backdrop-filter: blur(10px);
