@@ -7,9 +7,16 @@ const navItems = ["Home", "Projects", "Technologies", "About", "Contact"];
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [scrollProgress, setScrollProgress] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 10);
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10);
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            setScrollProgress(progress);
+        };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -26,6 +33,16 @@ function Header() {
             className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-[#0B2447]/70 backdrop-blur-md shadow-md" : "bg-transparent"
                 }`}
         >
+            {/* Progress Bar with Glow */}
+            <div
+                className="h-1 fixed top-0 left-0 z-50 bg-gradient-to-r from-[#00c6ff] to-[#2C74B3] shadow-[0_0_10px_#00c6ff] "
+                style={{
+                    width: `${scrollProgress}%`,
+                    boxShadow: '0 0 12px #2C74B3, 0 0 24px #00c6ff'
+                }}
+            ></div>
+
+
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
                 {/* Logo */}
                 <motion.a
