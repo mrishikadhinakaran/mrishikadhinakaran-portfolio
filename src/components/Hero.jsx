@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import Pfp from "../assets/Pfp.jpg";
 import { TypeAnimation } from 'react-type-animation';
 import { IoIosArrowDown } from "react-icons/io";
-import StarBackground from "./StarBackground"
+
 function Hero() {
     const containerRef = useRef(null);
     const x = useMotionValue(0);
