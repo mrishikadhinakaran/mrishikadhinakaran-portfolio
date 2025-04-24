@@ -40,7 +40,7 @@ function Header() {
 
                 {/* Desktop Nav */}
                 <ul className="hidden lg:flex gap-10">
-                    {navItems.map((item, index) => (
+                    {navItems.map((item) => (
                         <motion.li
                             key={item}
                             whileHover={{ scale: 1.15 }}

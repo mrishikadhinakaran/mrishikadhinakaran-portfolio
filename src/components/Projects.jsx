@@ -91,19 +91,19 @@ export default function Projects() {
                         <div className="relative z-10 p-6 sm:p-10 flex flex-col lg:flex-row gap-10 items-center">
                             {/* Text Section */}
                             <div className="flex-1">
-                                <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                                    <h3 className="text-xl sm:text-3xl font-bold text-white">{project.title}</h3>
                                 <p
-                                    className="text-sm font-semibold mb-4"
+                                    className="text-sm sm:text-base font-semibold mb-4"
                                     style={{ color: project.color }}
                                 >
                                     {project.subtitle} - {project.year}
                                 </p>
-                                <p className="text-white/80 mb-5">{project.description}</p>
+                                <p className="text-white/90 mb-5 text-sm sm:text-lg">{project.description}</p>
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.tech.map((tech) => (
                                         <span
                                             key={tech}
-                                            className="px-3 py-1 text-xs rounded-full font-medium border"
+                                            className="px-3 py-1 text-xs sm:text-sm rounded-full font-medium border"
                                             style={{
                                                 color: project.color,
                                                 borderColor: `${project.color}60`,
@@ -114,7 +114,7 @@ export default function Projects() {
                                         </span>
                                     ))}
                                 </div>
-                                <div className="flex gap-6 text-sm">
+                                <div className="flex gap-6 text-lg">
                                     <a
                                         href={project.demo}
                                         target="_blank"
@@ -134,9 +134,10 @@ export default function Projects() {
 
                             {/* Image Section */}
                             <motion.div
-                                whileHover={{ scale: 1.25 }}
+                                whileHover={{ scale: 1.1 }}
                                 transition={{ duration: 0.3 }}
-                                className="w-full lg:w-[350px] aspect-video overflow-hidden rounded-xl shadow-lg"
+                                className="w-full lg:w-[450px] aspect-video overflow-hidden rounded-xl shadow-lg cursor-pointer"
+                                onClick={() => window.open(project.demo, '_blank')}
                             >
                                 <img
                                     src={project.image}
