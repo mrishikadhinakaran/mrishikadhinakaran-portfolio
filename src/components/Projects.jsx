@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import hireorbit from "../assets/Hireorbit.png";
 import finwise from "../assets/Finwise.png";
@@ -10,8 +10,8 @@ const projects = [
         title: "HackYours",
         subtitle: "AI-Powered Hackathon Helper",
         year: "2025",
-        description: "AI-enhanced platform to assist hackathon teams in ideation, project setup, and submissions. Features intelligent suggestion engine and team collaboration dashboard.",
-        demo: "hackyours.raghavkatta.xyz/",
+        description: "An AI-enhanced platform to help teams ideate and build hackathon projects with smart tools and dashboards.",
+        demo: "https://hackyours.raghavkatta.xyz",
         image: hackyours,
         tech: ["Gemini API", "React", "Firebase", "Tailwind"],
         color: "#00FF00"
@@ -20,8 +20,8 @@ const projects = [
         title: "FinWise",
         subtitle: "AI-Powered Investment Platform",
         year: "2025",
-        description: "Personalized investment advisor integrating Gemini and AMFI APIs with a chatbot and financial education modules.",
-        demo: "finwise.ayush-sharma.in",
+        description: "A personal finance assistant integrating AMFI and Gemini APIs for recommendations, education and advice.",
+        demo: "https://finwise.ayush-sharma.in",
         image: finwise,
         tech: ["React", "Tailwind", "Appwrite", "Framer Motion"],
         color: "#00CC9A"
@@ -30,8 +30,8 @@ const projects = [
         title: "HireOrbit",
         subtitle: "Resume Recruitment Manager",
         year: "2025",
-        description: "Recruitment dashboard featuring resume parsing, smart candidate ranking, and real-time filtering. Powered by the MERN stack, Firebase authentication, and deployed on Cloudflare.",
-        demo: "hireorbit.pages.dev",
+        description: "Dashboard to parse, rank and filter resumes with ML + Firebase and deployable with ease.",
+        demo: "https://hireorbit.pages.dev",
         image: hireorbit,
         tech: ["MERN", "Firebase", "Cloudflare"],
         color: "#FFD700"
@@ -40,177 +40,115 @@ const projects = [
         title: "CareMate",
         subtitle: "Health Monitoring Web App",
         year: "2025",
-        description: "Personal health companion app to manage symptoms, medications, and appointments. Developed responsive UI with React and Firebase; built-in reminders for user care continuity.",
-        demo: "carematehealth.vercel.app",
+        description: "Personal health tracker with medication schedules, reminders, and appointment alerts.",
+        demo: "https://carematehealth.vercel.app",
         image: caremate,
         tech: ["React", "Firebase", "Node.js"],
         color: "#0066FF"
     }
 ];
 
-function Projects() {
-    const { scrollYProgress } = useScroll();
-    const scaleX = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001
-    });
-
-    const cardVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                type: "spring",
-                stiffness: 100
-            }
-        }
-    };
-
-    const imageVariants = {
-        hover: {
-            scale: 1.05,
-            transition: { duration: 0.3 }
-        }
-    };
-
-    const linkVariants = {
-        hover: {
-            x: 5,
-            scale: 1.1,
-            transition: { type: "spring", stiffness: 400 }
-        }
-    };
-
+export default function Projects() {
     return (
-        <div id="Projects" className="bg-black min-h-screen py-20 px-6 relative">
-            <motion.div
-                className="fixed top-0 left-0 right-0 h-1 bg-[#2C74B3] origin-left z-50"
-                style={{ scaleX }}
-            />
+        <section id="Projects" className="bg-[#0B2447] text-white px-6 py-24 min-h-screen">
+            <motion.h2
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-center text-4xl sm:text-6xl font-extrabold mb-20 relative flex justify-center text-transparent bg-clip-text bg-gradient-to-r  from-[#00c6ff] via-[#3696eb] to-[#3ad3fd]"
+>
+  Projects
 
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0B2447] via-[#19376D] to-[#205295] opacity-40" />
+  {/* Glow underline pulse */}
+  <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 h-[3px] w-32 bg-gradient-to-r from-[#00c6ff] via-[#2C74B3] to-[#00c6ff] blur-sm animate-pulse rounded-full" />
 
-            <div className="relative z-10 max-w-7xl mx-auto">
-                <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2 }}
-                    className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-[#205295] to-[#2C74B3] text-transparent bg-clip-text cursor-default animate-pulse"
-                >
-                    My Projects
-                </motion.h2>
+  {/* Soft neon reflection */}
+  <span className="absolute -bottom-6 left-1/2 w-40 h-6 blur-[40px] opacity-40 rounded-full -translate-x-1/2 bg-[#00c6ff]" />
+</motion.h2>
 
-                <div className="grid gap-12">
-                    {projects.map((project) => (
-                        <motion.div
-                            key={project.title}
-                            variants={cardVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            className="group relative"
-                        >
-                            <motion.div
-                                className="grid md:grid-cols-2 gap-8 p-6 rounded-xl bg-black/40 backdrop-blur-md border border-[#205295]/30 hover:border-[#2C74B3] transition-all overflow-hidden cursor-pointer"
-                                whileHover={{ y: -5, boxShadow: '0 10px 30px -15px rgba(44, 116, 179, 0.5)' }}
-                            >
-                                <div className="order-2 md:order-1">
-                                    <div className="flex flex-col justify-between h-full">
-                                        <div>
-                                            <motion.a
-                                                href={`https://${project.demo}`}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="inline-block"
-                                            >
-                                                <motion.h3
-                                                    className="text-2xl font-bold text-white mb-2 group-hover:text-[#2C74B3] transition-colors"
-                                                    whileHover={{ scale: 1.05 }}
-                                                >
-                                                    {project.title}
-                                                </motion.h3>
-                                            </motion.a>
-                                            <p className="text-[#205295] text-lg font-medium mb-4 cursor-default">
-                                                {project.subtitle} - {project.year}
-                                            </p>
-                                            <p className="text-white/80 mb-6 cursor-default">
-                                                {project.description}
-                                            </p>
-                                            <div className="flex flex-wrap gap-2 mb-6">
-                                                {project.tech.map((tech) => (
-                                                    <motion.span
-                                                        key={tech}
-                                                        className="px-3 py-1 text-sm rounded-full bg-[#205295]/20 text-[#2C74B3] border border-[#205295]/30 cursor-default"
-                                                        whileHover={{ scale: 1.1, y: -2 }}
-                                                        style={{
-                                                            backgroundColor: `${project.color}10`,
-                                                            borderColor: `${project.color}30`,
-                                                            color: project.color
-                                                        }}
-                                                    >
-                                                        {tech}
-                                                    </motion.span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <div className="flex gap-4">
-                                            <motion.a
-                                                href={`https://${project.demo}`}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-white hover:text-[#2C74B3] transition-colors"
-                                                variants={linkVariants}
-                                                whileHover="hover"
-                                            >
-                                                <span>Live Demo</span>
-                                                <FaExternalLinkAlt size={16} />
-                                            </motion.a>
-                                            <motion.a
-                                                href="#"
-                                                className="flex items-center gap-2 text-white hover:text-[#2C74B3] transition-colors"
-                                                variants={linkVariants}
-                                                whileHover="hover"
-                                            >
-                                                <span>Source Code</span>
-                                                <FaGithub size={16} />
-                                            </motion.a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <motion.div
-                                    className="order-1 md:order-2 relative overflow-hidden rounded-lg"
-                                    variants={imageVariants}
-                                    whileHover="hover"
+            <div className="space-y-20 max-w-6xl mx-auto">
+                {projects.map((project, i) => (
+                    <motion.div
+                        key={project.title}
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
+                        className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md hover:shadow-2xl group transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                        {/* Left Glow Bar */}
+                        <div
+                            className="absolute left-0 top-0 h-full w-1.5 rounded-tr-lg rounded-br-lg animate-pulse"
+                            style={{ backgroundColor: project.color }}
+                        />
+
+                        {/* Glow Aura on Hover */}
+                        <div
+                            className="absolute inset-0 opacity-0 group-hover:opacity-20 transition duration-500 blur-[90px] rounded-2xl -z-10"
+                            style={{ backgroundColor: project.color }}
+                        />
+
+                        {/* Card content */}
+                        <div className="relative z-10 p-6 sm:p-10 flex flex-col lg:flex-row gap-10 items-center">
+                            {/* Text Section */}
+                            <div className="flex-1">
+                                <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                                <p
+                                    className="text-sm font-semibold mb-4"
+                                    style={{ color: project.color }}
                                 >
-                                    <motion.a
-                                        href={`https://${project.demo}`}
+                                    {project.subtitle} - {project.year}
+                                </p>
+                                <p className="text-white/80 mb-5">{project.description}</p>
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {project.tech.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="px-3 py-1 text-xs rounded-full font-medium border"
+                                            style={{
+                                                color: project.color,
+                                                borderColor: `${project.color}60`,
+                                                backgroundColor: `${project.color}10`
+                                            }}
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                                <div className="flex gap-6 text-sm">
+                                    <a
+                                        href={project.demo}
                                         target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block relative"
+                                        rel="noreferrer"
+                                        className="flex items-center gap-2 hover:text-cyan-400"
                                     >
-                                        <motion.div
-                                            className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"
-                                            whileHover={{ opacity: 0.2 }}
-                                        />
-                                        <motion.img
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="w-full h-full object-cover rounded-lg transform"
-                                            whileHover={{ scale: 1.1 }}
-                                            transition={{ duration: 0.4 }}
-                                        />
-                                    </motion.a>
-                                </motion.div>
+                                        <FaExternalLinkAlt /> Live Demo
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className="flex items-center gap-2 hover:text-cyan-400"
+                                    >
+                                        <FaGithub /> Source Code
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Image Section */}
+                            <motion.div
+                                whileHover={{ scale: 1.25 }}
+                                transition={{ duration: 0.3 }}
+                                className="w-full lg:w-[350px] aspect-video overflow-hidden rounded-xl shadow-lg"
+                            >
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="object-contain w-full h-full rounded-xl"
+                                    style={{ objectPosition: "top center" }}
+                                />
                             </motion.div>
-                        </motion.div>
-                    ))}
-                </div>
+                        </div>
+                    </motion.div>
+                ))}
             </div>
-        </div>
+        </section>
     );
 }
-
-export default Projects;
