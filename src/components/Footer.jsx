@@ -1,68 +1,62 @@
-import { FaGithub, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-function Footer() {
+export default function Footer() {
     return (
-        <div className="bg-black relative overflow-hidden py-12">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B2447]/50 to-black" />
+        <footer className="relative bg-gradient-to-b from-[#0B2447] via-[#19376D] to-[#0B2447] text-white py-12 overflow-hidden">
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
 
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="flex justify-center gap-8 mb-12 relative z-10">
-                    <motion.a
-                        whileHover={{ scale: 1.2, y: -5 }}
-                        href="https://github.com/raghavxkatta"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-4xl text-[#205295] hover:text-[#2C74B3] transition-all duration-300 hover:shadow-lg hover:shadow-[#205295]/20"
-                    >
-                        <FaGithub />
-                    </motion.a>
-                    <motion.a
-                        whileHover={{ scale: 1.2, y: -5 }}
-                        href="https://www.instagram.com/raghavxkatta/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-4xl text-[#205295] hover:text-[#2C74B3] transition-all duration-300 hover:shadow-lg hover:shadow-[#205295]/20"
-                    >
-                        <FaInstagram />
-                    </motion.a>
-                    <motion.a
-                        whileHover={{ scale: 1.2, y: -5 }}
-                        href="https://x.com/KattaRaghav"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-4xl text-[#205295] hover:text-[#2C74B3] transition-all duration-300 hover:shadow-lg hover:shadow-[#205295]/20"
-                    >
-                        <FaTwitter />
-                    </motion.a>
-                    <motion.a
-                        whileHover={{ scale: 1.2, y: -5 }}
-                        href="https://www.linkedin.com/in/raghav-katta-11674a223/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-4xl text-[#205295] hover:text-[#2C74B3] transition-all duration-300 hover:shadow-lg hover:shadow-[#205295]/20"
-                    >
-                        <FaLinkedin />
-                    </motion.a>
+            <div className="relative z-10 max-w-7xl mx-auto px-6">
+                {/* Social Icons */}
+                <div className="flex justify-center gap-8 mb-10">
+                    {[{
+                        icon: FaGithub,
+                        href: "https://github.com/raghavxkatta"
+                    }, {
+                        icon: FaInstagram,
+                        href: "https://www.instagram.com/raghavxkatta/"
+                    }, {
+                        icon: FaTwitter,
+                        href: "https://x.com/KattaRaghav"
+                    }, {
+                        icon: FaLinkedin,
+                        href: "https://www.linkedin.com/in/raghav-katta-11674a223/"
+                    }].map(({ icon: Icon, href }, i) => (
+                        <motion.a
+                            key={i}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.3, rotate: 5 }}
+                            className="text-3xl md:text-4xl text-[#2C74B3] hover:text-[#00c6ff] transition-all duration-300"
+                        >
+                            <Icon />
+                        </motion.a>
+                    ))}
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center mb-2 relative z-10">
-                    {["Home", "About", "Projects", "Contact"].map((item) => (
+                {/* Navigation Links */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-8">
+                    {["Home", "About", "Projects", "Contact"].map((item, i) => (
                         <motion.a
-                            key={item}
-                            whileHover={{ scale: 1.1, y: -2 }}
+                            key={i}
                             href={`#${item}`}
-                            className="text-white/90 hover:text-[#2C74B3] transition-all duration-300 text-lg font-medium"
+                            whileHover={{ scale: 1.1, y: -2 }}
+                            className="text-white/90 text-lg font-medium hover:text-[#00c6ff] transition duration-300"
                         >
                             {item}
                         </motion.a>
                     ))}
                 </div>
 
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-[#2C74B3] to-transparent mb-6" />
 
+                {/* Copyright */}
+                <p className="text-center text-sm text-white/70">
+                    © {new Date().getFullYear()} <span className="font-bold text-[#00c6ff]">Raghav Katta</span>. All rights reserved.
+                </p>
             </div>
-        </div>
+        </footer>
     );
 }
-
-export default Footer;

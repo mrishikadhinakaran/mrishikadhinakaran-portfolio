@@ -23,35 +23,41 @@ function Header() {
             initial={{ y: -80 }}
             animate={{ y: 0 }}
             transition={{ type: "spring", stiffness: 80, damping: 15 }}
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-                scrolled ? "bg-black/70 backdrop-blur-lg shadow-xl" : "bg-transparent"
-            }`}
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-[#0B2447]/70 backdrop-blur-md shadow-md" : "bg-transparent"
+                }`}
         >
-            <div className="max-w-7xl mx-auto px-6 sm:px-10 py-4 flex justify-between items-center relative">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
                 {/* Logo */}
-                <motion.img
-                    src={logo}
-                    alt="Logo"
-                    className="h-12 sm:h-16 w-auto"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 }}
-                />
+                <motion.a
+                    href="#Home"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="flex items-center gap-2"
+                >
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        className="h-15 w-auto filter drop-shadow-lg hover:drop-shadow-glow transition duration-300"
+                    />
+
+                </motion.a>
 
                 {/* Desktop Nav */}
-                <ul className="hidden lg:flex gap-10">
+                <ul className="hidden lg:flex gap-10 items-center">
                     {navItems.map((item) => (
                         <motion.li
                             key={item}
-                            whileHover={{ scale: 1.15 }}
+                            whileHover={{ scale: 1.12 }}
                             whileTap={{ scale: 0.95 }}
-                            transition={{ type: "spring", stiffness: 300 }}
+                            className="relative"
                         >
                             <a
                                 href={`#${item}`}
-                                className="relative text-white text-lg font-semibold tracking-wide hover:text-gradient4"
+                                className="text-white/90 hover:text-[#2C74B3] transition-all font-medium text-lg relative group"
                             >
-                                <span className="nav-glow">{item}</span>
+                                {item}
+                                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#00c6ff] to-[#2C74B3] group-hover:w-full transition-all duration-300"></span>
                             </a>
                         </motion.li>
                     ))}
@@ -59,15 +65,27 @@ function Header() {
 
                 {/* Mobile Burger */}
                 <button
-                    className="lg:hidden flex flex-col gap-1 z-50"
                     onClick={() => setMenuOpen(!menuOpen)}
+                    className="lg:hidden z-50 flex flex-col justify-center items-center gap-[5px] p-2 cursor-pointer relative"
                 >
-                    <span className="w-6 h-0.5 bg-white rounded-full" />
-                    <span className="w-6 h-0.5 bg-white rounded-full" />
-                    <span className="w-6 h-0.5 bg-white rounded-full" />
+                    <motion.span
+                        animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 6 : 0 }}
+                        transition={{ duration: 0.2, ease: "easeInOut" }}
+                        className="w-6 h-[2px] bg-white rounded-full"
+                    />
+                    <motion.span
+                        animate={{ opacity: menuOpen ? 0 : 1 }}
+                        transition={{ duration: 0.2, ease: "easeInOut" }}
+                        className="w-6 h-[2px] bg-white rounded-full"
+                    />
+                    <motion.span
+                        animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -6 : 0 }}
+                        transition={{ duration: 0.2, ease: "easeInOut" }}
+                        className="w-6 h-[2px] bg-white rounded-full"
+                    />
                 </button>
 
-                {/* Mobile Nav */}
+                {/* Mobile Menu */}
                 <AnimatePresence>
                     {menuOpen && (
                         <motion.ul
