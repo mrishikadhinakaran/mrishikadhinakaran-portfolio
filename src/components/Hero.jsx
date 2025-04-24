@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import Pfp from "../assets/Pfp.jpg";
 import { TypeAnimation } from 'react-type-animation';
 import { IoIosArrowDown } from "react-icons/io";
-
+import StarBackground from "./StarBackground"
 function Hero() {
     const containerRef = useRef(null);
     const x = useMotionValue(0);
@@ -28,14 +28,10 @@ function Hero() {
     return (
         <div
             ref={containerRef}
+
             className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20 pt-20 sm:pt-24"
         >
-            {/* Background blobs */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-r from-gradient2 to-gradient3 blur-3xl opacity-30 top-[10%] left-[5%] animate-pulse" />
-                <div className="absolute w-[300px] h-[300px] rounded-full bg-gradient-to-r from-gradient1 to-gradient4 blur-2xl opacity-20 bottom-[10%] right-[10%] animate-pulse-slow" />
-            </div>
-
+            
             {/* Text Section */}
             <div className="flex flex-col items-center lg:items-start gap-4 z-10">
                 <div className="text-xl sm:text-2xl mb-1 text-gray-300">
@@ -62,7 +58,7 @@ function Hero() {
                 >
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
                         Hello!, I&apos;m <br />
-                        <span className="gradient-text animate-pulse">Raghav Katta</span>
+                        <span className="gradient-text ">Raghav Katta</span>
                     </h1>
                     <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-6">
                         Specializing in building modern web applications with React, Node.js, and cloud technologies.

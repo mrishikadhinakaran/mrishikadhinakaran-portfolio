@@ -10,21 +10,21 @@ import {
 import { BiData } from 'react-icons/bi';
 
 const skills = [
-    { name: 'MongoDB', icon: <DiMongodb className="text-5xl" /> },
-    { name: 'Express', icon: <SiExpress className="text-5xl" /> },
-    { name: 'React', icon: <DiReact className="text-5xl" /> },
-    { name: 'NodeJS', icon: <DiNodejs className="text-5xl" /> },
-    { name: 'Firebase', icon: <SiFirebase className="text-5xl" /> },
-    { name: 'Appwrite', icon: <SiAppwrite className="text-5xl" /> },
-    { name: 'Clerk', icon: <SiClerk className="text-5xl" /> },
-    { name: 'C', icon: <SiC className="text-5xl" /> },
-    { name: 'C++', icon: <SiCplusplus className="text-5xl" /> },
-    { name: 'Java', icon: <DiJava className="text-5xl" /> },
-    { name: 'Python', icon: <DiPython className="text-5xl" /> },
-    { name: 'TypeScript', icon: <SiTypescript className="text-5xl" /> },
-    { name: 'NextJS', icon: <SiNextdotjs className="text-5xl" /> },
-    { name: 'Tailwind', icon: <SiTailwindcss className="text-5xl" /> },
-    { name: 'SQL', icon: <BiData className="text-5xl" /> },
+    { name: 'MongoDB', icon: <DiMongodb className=" text-3xl sm:text-5xl" /> },
+    { name: 'Express', icon: <SiExpress className=" text-3xl sm:text-5xl" /> },
+    { name: 'React', icon: <DiReact className=" text-3xl sm:text-5xl" /> },
+    { name: 'NodeJS', icon: <DiNodejs className=" text-3xl sm:text-5xl" /> },
+    { name: 'Firebase', icon: <SiFirebase className=" text-3xl sm:text-5xl" /> },
+    { name: 'Appwrite', icon: <SiAppwrite className=" text-3xl sm:text-5xl" /> },
+    { name: 'Clerk', icon: <SiClerk className=" text-3xl sm:text-5xl" /> },
+    { name: 'C', icon: <SiC className=" text-3xl sm:text-5xl" /> },
+    { name: 'C++', icon: <SiCplusplus className=" text-3xl sm:text-5xl" /> },
+    { name: 'Java', icon: <DiJava className=" text-3xl sm:text-5xl" /> },
+    { name: 'Python', icon: <DiPython className=" text-3xl sm:text-5xl" /> },
+    { name: 'TypeScript', icon: <SiTypescript className=" text-3xl sm:text-5xl" /> },
+    { name: 'NextJS', icon: <SiNextdotjs className=" text-3xl sm:text-5xl" /> },
+    { name: 'Tailwind', icon: <SiTailwindcss className=" text-3xl sm:text-5xl" /> },
+    { name: 'SQL', icon: <BiData className=" text-3xl sm:text-5xl" /> },
 ];
 
 export default function Skills() {
@@ -48,12 +48,12 @@ export default function Skills() {
                 <motion.h2
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-transparent bg-clip-text"
+                    className=" text-3xl sm:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-transparent bg-clip-text"
                 >
                     Technical Skills
                 </motion.h2>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
                     {skills.map((skill) => {
                         const ref = useRef(null);
                         const isInView = useInView(ref, { margin: '-50px 0px', amount: 0.5 });
@@ -63,7 +63,7 @@ export default function Skills() {
                                 key={skill.name}
                                 whileHover={{ scale: 1.07 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="group flex flex-col items-center justify-center p-4 h-[160px] rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md hover:shadow-cyan-500/20 transition-all overflow-hidden"
+                                className="group flex flex-col items-center justify-center p-4 h-[100px] w-[100px] sm:h-[160px] sm:w-[220px] rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md hover:shadow-cyan-500/20 transition-all overflow-hidden"
                             >
                                 <div className="absolute w-40 h-40 bg-cyan-500/10 blur-[80px] opacity-0 group-hover:opacity-20 transition-all duration-500 -z-10" />
 
