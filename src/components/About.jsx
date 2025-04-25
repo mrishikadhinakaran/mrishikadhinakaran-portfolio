@@ -115,7 +115,7 @@ export default function About() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-[#205295] to-[#2C74B3] text-white font-semibold py-2 rounded-lg transition-all"
+              className="cursor-pointer bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white font-semibold py-2 rounded-lg transition-all"
             >
               Send Message
             </motion.button>
