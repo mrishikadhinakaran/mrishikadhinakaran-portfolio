@@ -12,7 +12,7 @@ export default function About() {
 
   return (
     <section
-      id="About"
+      id="About1"
       className="relative overflow-hidden min-h-screen bg-[#0B2447] px-4 py-16"
     >
       <SnowParticles />

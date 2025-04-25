@@ -67,7 +67,7 @@ function Hero() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <motion.a
-                            href="#Contact"
+                            href="#About1"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-cyan-500/50 transition-all"
