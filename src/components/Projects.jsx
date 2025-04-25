@@ -59,9 +59,9 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center text-4xl sm:text-6xl font-extrabold mb-20 relative flex justify-center text-transparent bg-clip-text bg-gradient-to-r  from-[#00c6ff] via-[#3696eb] to-[#3ad3fd]"
+                className="text-center text-4xl sm:text-6xl animate-pulse font-bold mb-20 relative flex justify-center text-transparent bg-clip-text bg-gradient-to-r from-[#00c6ff] to-[#0072ff]"
             >
-                Projects
+                My Projects
 
                 {/* Glow underline pulse */}
                 <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 h-[3px] w-32 bg-gradient-to-r from-[#00c6ff] via-[#2C74B3] to-[#00c6ff] blur-sm animate-pulse rounded-full" />
