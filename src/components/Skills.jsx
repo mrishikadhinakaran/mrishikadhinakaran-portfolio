@@ -51,7 +51,7 @@ export default function Skills() {
                                 key={skill.name}
                                 whileHover={{ scale: 1.07 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="group flex flex-col items-center justify-center p-4 h-[100px] w-[100px] sm:h-[160px] sm:w-[220px] rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md hover:shadow-cyan-500/20 transition-all overflow-hidden"
+                                className="group flex flex-col items-center justify-center p-4 h-[120px] w-[100px] sm:h-[160px] sm:w-[220px] rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md hover:shadow-cyan-500/20 transition-all overflow-hidden"
                             >
                                 <div className="absolute w-40 h-40 bg-cyan-500/10 blur-[80px] opacity-0 group-hover:opacity-20 transition-all duration-500 -z-10" />
 
