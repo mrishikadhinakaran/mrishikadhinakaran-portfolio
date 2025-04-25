@@ -37,7 +37,7 @@ export default function Footer() {
 
                 {/* Navigation Links */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-8">
-                    {["Home", "About", "Projects", "Contact"].map((item, i) => (
+                    {["Home", "About", "Projects", "Technologies"].map((item, i) => (
                         <motion.a
                             key={i}
                             href={`#${item}`}
