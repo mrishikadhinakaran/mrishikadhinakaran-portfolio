@@ -7,32 +7,34 @@ import Seperation from './components/Seperation'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Particle from './components/Particle.jsx'
+import SnowParticles from './components/SnowParticle.jsx'
 import SmoothScroll from './components/LenisScroll.jsx'
 
 function App() {
   return (
     <div className='min-h-screen flex flex-col bg-gradient1'>
-      <Particle/>
-      <Header/>
+
+      <Header />
       <SmoothScroll>
         <section id='Home'>
-          
-          <Hero/>
+          <Particle />
+          <Hero />
         </section>
-        <Seperation/>
+        <Seperation />
         <section id='Technologies'>
-          <Skills/>
+          <Skills />
         </section>
-        <Seperation/>
+        <Seperation />
         <section id='Projects'>
+          <SnowParticles />
           <Projects />
         </section>
-        <Seperation/>
+        <Seperation />
         <section id='About'>
           <About />
         </section>
       </SmoothScroll>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

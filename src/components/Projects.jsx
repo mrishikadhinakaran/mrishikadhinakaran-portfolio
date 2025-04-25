@@ -13,7 +13,7 @@ const projects = [
         description: "An AI-enhanced platform to help teams ideate and build hackathon projects with smart tools and dashboards.",
         demo: "https://hackyours.raghavkatta.xyz",
         image: hackyours,
-        github:"https://github.com/raghavxkatta/HackYours-BinaryBrains",
+        github: "https://github.com/raghavxkatta/HackYours-BinaryBrains",
         tech: ["Gemini API", "React", "Firebase", "Tailwind"],
         color: "#00FF00"
     },
@@ -24,7 +24,7 @@ const projects = [
         description: "A personal finance assistant integrating AMFI and Gemini APIs for recommendations, education and advice.",
         demo: "https://finwise.ayush-sharma.in",
         image: finwise,
-        github:"#",
+        github: "#",
         tech: ["React", "Tailwind", "Appwrite", "Framer Motion"],
         color: "#00CC9A"
     },
@@ -34,7 +34,7 @@ const projects = [
         year: "2025",
         description: "Dashboard to parse, rank and filter resumes with ML + Firebase and deployable with ease.",
         demo: "https://hireorbit.pages.dev",
-        github:"#",
+        github: "#",
         image: hireorbit,
         tech: ["MERN", "Firebase", "Cloudflare"],
         color: "#FFD700"
@@ -45,7 +45,7 @@ const projects = [
         year: "2025",
         description: "Personal health tracker with medication schedules, reminders, and appointment alerts.",
         demo: "https://carematehealth.vercel.app",
-        github:"#",
+        github: "#",
         image: caremate,
         tech: ["React", "Firebase", "Node.js"],
         color: "#0066FF"
@@ -56,19 +56,19 @@ export default function Projects() {
     return (
         <section id="Projects" className="bg-[#0B2447] text-white px-6 py-24 min-h-screen">
             <motion.h2
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  className="text-center text-4xl sm:text-6xl font-extrabold mb-20 relative flex justify-center text-transparent bg-clip-text bg-gradient-to-r  from-[#00c6ff] via-[#3696eb] to-[#3ad3fd]"
->
-  Projects
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-center text-4xl sm:text-6xl font-extrabold mb-20 relative flex justify-center text-transparent bg-clip-text bg-gradient-to-r  from-[#00c6ff] via-[#3696eb] to-[#3ad3fd]"
+            >
+                Projects
 
-  {/* Glow underline pulse */}
-  <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 h-[3px] w-32 bg-gradient-to-r from-[#00c6ff] via-[#2C74B3] to-[#00c6ff] blur-sm animate-pulse rounded-full" />
+                {/* Glow underline pulse */}
+                <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 h-[3px] w-32 bg-gradient-to-r from-[#00c6ff] via-[#2C74B3] to-[#00c6ff] blur-sm animate-pulse rounded-full" />
 
-  {/* Soft neon reflection */}
-  <span className="absolute -bottom-6 left-1/2 w-40 h-6 blur-[40px] opacity-40 rounded-full -translate-x-1/2 bg-[#00c6ff]" />
-</motion.h2>
+                {/* Soft neon reflection */}
+                <span className="absolute -bottom-6 left-1/2 w-40 h-6 blur-[40px] opacity-40 rounded-full -translate-x-1/2 bg-[#00c6ff]" />
+            </motion.h2>
 
             <div className="space-y-20 max-w-6xl mx-auto">
                 {projects.map((project, i) => (
@@ -95,7 +95,7 @@ export default function Projects() {
                         <div className="relative z-10 p-6 sm:p-10 flex flex-col lg:flex-row gap-10 items-center">
                             {/* Text Section */}
                             <div className="flex-1">
-                                    <h3 className="text-xl sm:text-3xl font-bold text-white">{project.title}</h3>
+                                <h3 className="text-xl sm:text-3xl font-bold text-white">{project.title}</h3>
                                 <p
                                     className="text-sm sm:text-base font-semibold mb-4"
                                     style={{ color: project.color }}
