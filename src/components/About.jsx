@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-
+import SnowParticles from "./SnowParticle";
 export default function About() {
   const formRef = useRef(null);
   const [showToast, setShowToast] = useState(false);
@@ -13,8 +13,9 @@ export default function About() {
   return (
     <section
       id="About"
-      className="relative overflow-hidden min-h-screen bg-gradient-to-br from-[#0B2447] via-[#19376D] to-[#205295] px-4 py-16"
+      className="relative overflow-hidden min-h-screen bg-[#0B2447] px-4 py-16"
     >
+      <SnowParticles />
       <div className="relative  max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Bot Column */}
         <motion.div
