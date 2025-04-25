@@ -20,7 +20,7 @@ function App() {
           <Particle />
           <Hero />
         </section>
-        <Seperation />
+        {/* <Seperation /> */}
         <section id='Technologies'>
           <Skills />
         </section>
