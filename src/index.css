@@ -9,26 +9,31 @@
         @apply bg-[#0A2647] text-white;
     }
 }
+
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #0B2447; /* Matches your dark base background */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #205295, #2C74B3); /* Subtle gradient */
+}
+
+::-webkit-scrollbar-track {
+    background: #0B2447;
+    /* Matches your dark base background */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #205295, #2C74B3);
+    /* Subtle gradient */
     border-radius: 9999px;
-    border: 2px solid #0B2447; /* Blends with track background */
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #00c6ff, #0072ff); /* Lighter on hover */
-  }
-  
+    border: 2px solid #0B2447;
+    /* Blends with track background */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #00c6ff, #0072ff);
+    /* Lighter on hover */
+}
+
 
 @layer utilities {
 
@@ -45,6 +50,23 @@
     .animate-spin-slow {
         animation: spin-slow 15s linear infinite;
     }
+
+    @keyframes subtlePulse {
+
+        0%,
+        100% {
+            text-shadow: 0 0 6px rgba(0, 198, 255, 0.4);
+        }
+
+        50% {
+            text-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
+        }
+    }
+
+    .pulse-glow {
+        animation: subtlePulse 2.5s ease-in-out infinite;
+    }
+
 
     @keyframes pulse {
 
@@ -86,6 +108,22 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
+    .text-glow-cyan {
+        text-shadow: 0 0 8px rgba(0, 255, 255, 0.6), 0 0 16px rgba(0, 255, 255, 0.3);
+    }
+
+    .gradient-text-hero {
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        /* pure cyan to blue */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow:
+            0 0 6px rgba(0, 198, 255, 0.5),
+            0 0 12px rgba(0, 114, 255, 0.3);
+    }
+
+
     .gradient-text {
         background: linear-gradient(to right, #4facfe, #00f2fe);
         text-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
@@ -93,16 +131,18 @@
         background-clip: text;
         color: transparent;
     }
+
     .glass-card {
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(20px);
         border-radius: 20px;
         transition: all 0.3s ease;
-      }
-      .glass-card:hover {
+    }
+
+    .glass-card:hover {
         box-shadow: 0 0 30px rgba(44, 116, 179, 0.4);
-      }
-      
+    }
+
 
     .glass-blur {
         backdrop-filter: blur(10px);

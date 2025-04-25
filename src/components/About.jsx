@@ -53,7 +53,7 @@ export default function About() {
 
           <p className="text-white/90 text-lg leading-relaxed mb-4">
             I'm{" "}
-            <span className="text-[#2C74B3] font-semibold">Raghav Katta</span>,
+            <span className="text-[#5f9acf] pulse-glow font-semibold">Raghav Katta</span>,
             a modern-day digital alchemist who thrives on turning complex ideas
             into scalable, elegant solutions using <strong>MongoDB</strong>,{" "}
             <strong>Express.js</strong>, <strong>React</strong>, and{" "}

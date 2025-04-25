@@ -31,7 +31,7 @@ function Hero() {
 
             className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20 pt-20 sm:pt-24"
         >
-            
+
             {/* Text Section */}
             <div className="flex flex-col items-center lg:items-start gap-4 z-10">
                 <div className="text-xl sm:text-2xl mb-1 text-gray-300">
@@ -58,8 +58,9 @@ function Hero() {
                 >
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
                         Hello!, I&apos;m <br />
-                        <span className="gradient-text ">Raghav Katta</span>
+                        <span className="gradient-text-hero pulse-glow">Raghav Katta</span>
                     </h1>
+
                     <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-6">
                         Specializing in building modern web applications with React, Node.js, and cloud technologies.
                         Passionate about creating seamless user experiences and scalable backend solutions.
@@ -112,15 +113,15 @@ function Hero() {
             </motion.div>
 
             {/* Scroll icon */}
-<motion.div
-    className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
-    animate={{ y: [0, 10, 0] }}
-    transition={{ duration: 2, repeat: Infinity }}
->
-    <a href="#About" className="text-white cursor-pointer hover:scale-110 transition-transform">
-        <IoIosArrowDown size={24} />
-    </a>
-</motion.div>
+            <motion.div
+                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+            >
+                <a href="#About" className="text-white cursor-pointer hover:scale-110 transition-transform">
+                    <IoIosArrowDown size={24} />
+                </a>
+            </motion.div>
 
         </div>
     );

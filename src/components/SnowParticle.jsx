@@ -45,7 +45,7 @@ export default function SnowParticles() {
                                 },
                             },
                             color: {
-                                value: "#ffffff",
+                                value: ["#00FF99", "#00c6ff", "#38BDF8"],
                             },
                             shape: {
                                 type: "circle",
