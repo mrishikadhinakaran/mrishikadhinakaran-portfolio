@@ -8,7 +8,7 @@ import {
     SiTailwindcss, SiC, SiFirebase, SiAppwrite, SiClerk
 } from 'react-icons/si';
 import { BiData } from 'react-icons/bi';
-
+import SnowParticles from './SnowParticle';
 const skills = [
     { name: 'MongoDB', icon: <DiMongodb className=" text-3xl sm:text-5xl" /> },
     { name: 'Express', icon: <SiExpress className=" text-3xl sm:text-5xl" /> },
@@ -30,20 +30,8 @@ const skills = [
 export default function Skills() {
     return (
         <section id="Skills" className="relative py-20 px-6 min-h-screen overflow-hidden bg-[#0B2447] text-white">
-            <div className="absolute inset-0 -z-10 overflow-hidden">
-                <svg className="w-full h-full" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                    <defs>
-                        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stopColor="#00f2fe" stopOpacity="0.4" />
-                            <stop offset="100%" stopColor="#0072ff" stopOpacity="0" />
-                        </radialGradient>
-                    </defs>
-                    <circle cx="400" cy="400" r="400" fill="url(#glow)">
-                        <animate attributeName="r" values="300;400;300" dur="12s" repeatCount="indefinite" />
-                    </circle>
-                </svg>
-            </div>
-
+            <SnowParticles />
+            
             <div className="max-w-7xl w-full mx-auto px-4">
                 <motion.h2
                     animate={{ y: [0, -8, 0] }}
