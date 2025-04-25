@@ -13,6 +13,7 @@ const projects = [
         description: "An AI-enhanced platform to help teams ideate and build hackathon projects with smart tools and dashboards.",
         demo: "https://hackyours.raghavkatta.xyz",
         image: hackyours,
+        github:"https://github.com/raghavxkatta/HackYours-BinaryBrains",
         tech: ["Gemini API", "React", "Firebase", "Tailwind"],
         color: "#00FF00"
     },
@@ -23,6 +24,7 @@ const projects = [
         description: "A personal finance assistant integrating AMFI and Gemini APIs for recommendations, education and advice.",
         demo: "https://finwise.ayush-sharma.in",
         image: finwise,
+        github:"#",
         tech: ["React", "Tailwind", "Appwrite", "Framer Motion"],
         color: "#00CC9A"
     },
@@ -32,6 +34,7 @@ const projects = [
         year: "2025",
         description: "Dashboard to parse, rank and filter resumes with ML + Firebase and deployable with ease.",
         demo: "https://hireorbit.pages.dev",
+        github:"#",
         image: hireorbit,
         tech: ["MERN", "Firebase", "Cloudflare"],
         color: "#FFD700"
@@ -42,6 +45,7 @@ const projects = [
         year: "2025",
         description: "Personal health tracker with medication schedules, reminders, and appointment alerts.",
         demo: "https://carematehealth.vercel.app",
+        github:"#",
         image: caremate,
         tech: ["React", "Firebase", "Node.js"],
         color: "#0066FF"

@@ -6,14 +6,17 @@ import Footer from './components/Footer'
 import Seperation from './components/Seperation'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Particle from './components/Particle.jsx'
 import SmoothScroll from './components/LenisScroll.jsx'
 
 function App() {
   return (
     <div className='min-h-screen flex flex-col bg-gradient1'>
+      <Particle/>
       <Header/>
       <SmoothScroll>
         <section id='Home'>
+          
           <Hero/>
         </section>
         <Seperation/>
