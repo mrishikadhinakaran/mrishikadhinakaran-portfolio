@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import SnowParticles from "./SnowParticle";
+import ContactTerminal from "./ContactTerminal";
 export default function About() {
   const formRef = useRef(null);
   const [showToast, setShowToast] = useState(false);
@@ -18,7 +19,7 @@ export default function About() {
       <SnowParticles />
       <div className="relative  max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Bot Column */}
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
@@ -64,7 +65,8 @@ export default function About() {
             design, clean code, and pushing boundaries.
           </p>
 
-        
+        <hr className="my-6 border-[#2C74B3]/20" />
+
           <h2 className="text-2xl font-bold text-white mb-4">📬 Contact Me</h2>
 
           <AnimatePresence>
@@ -80,47 +82,7 @@ export default function About() {
             )}
           </AnimatePresence>
 
-          <form
-            ref={formRef}
-            onSubmit={() => {
-              handleSuccess();
-              setTimeout(() => formRef.current.reset(), 100);
-            }}
-            method="POST"
-            action="https://formspree.io/f/mgvageav"
-            target="dummyFrame"
-            className="flex flex-col gap-4"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-              className="bg-black/50 border border-[#2C74B3]/50 text-white px-4 py-2 rounded-md outline-none focus:border-[#2C74B3]"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-              className="bg-black/50 border border-[#2C74B3]/50 text-white px-4 py-2 rounded-md outline-none focus:border-[#2C74B3]"
-            />
-            <textarea
-              name="message"
-              placeholder="Write your message..."
-              rows={5}
-              required
-              className="bg-black/50 border border-[#2C74B3]/50 text-white px-4 py-2 rounded-md outline-none focus:border-[#2C74B3] resize-none"
-            />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="cursor-pointer bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white font-semibold py-2 rounded-lg transition-all"
-            >
-              Send Message
-            </motion.button>
-            <iframe name="dummyFrame" style={{ display: "none" }} />
-          </form>
+          <ContactTerminal/>
         </motion.div>
       </div>
     </section>
