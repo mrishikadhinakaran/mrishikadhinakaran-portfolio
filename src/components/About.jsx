@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import { useRef, useState } from "react";
 import SnowParticles from "./SnowParticle";
 import ContactTerminal from "./ContactTerminal";
@@ -11,6 +12,16 @@ export default function About() {
     setTimeout(() => setShowToast(false), 3000);
   };
 
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data?.name === "link_redirect") {
+        window.open("https://www.linkedin.com/in/raghav-katta-11674a223/", "_blank");
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
   return (
     <section
       id="About1"
@@ -26,6 +37,7 @@ export default function About() {
           className="w-full h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center"
         >
           <iframe
+          id="spline-iframe"
             src="https://my.spline.design/happyrobotbutton-z223TCHWkFzxAoGzpR0Xgs7B/"
             frameBorder="0"
             allow="autoplay; fullscreen"

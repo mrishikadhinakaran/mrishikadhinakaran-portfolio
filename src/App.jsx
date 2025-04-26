@@ -17,7 +17,7 @@ function App() {
       <Header />
       <SmoothScroll>
         <section id='Home'>
-          <Particle />
+          {/* <Particle /> */}
           <Hero />
         </section>
         {/* <Seperation /> */}
