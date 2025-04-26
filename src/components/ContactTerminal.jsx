@@ -1,14 +1,16 @@
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactTerminal() {
   const formRef = useRef(null);
   const [outputLines, setOutputLines] = useState([]);
   const [startedPush, setStartedPush] = useState(false);
   const [isPushing, setIsPushing] = useState(false);
+  const [showOutput, setShowOutput] = useState(false); // New state to control visibility
 
   const handlePush = async () => {
     setStartedPush(true);
+    setShowOutput(true);
     setOutputLines(["$ git push origin message-to-raghav"]);
 
     const fakeOutput = [
@@ -29,13 +31,22 @@ export default function ContactTerminal() {
 
     setTimeout(() => {
       setIsPushing(false);
+
+      // After 3 seconds, fade out
+      setTimeout(() => {
+        setShowOutput(false); // triggers AnimatePresence exit
+        setTimeout(() => {
+          setStartedPush(false);
+          setOutputLines([]);
+        }, 500); // extra 0.5s after fade-out animation
+      }, 3000);
+
     }, fakeOutput.length * 500 + 500);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // After user fills form, clicking push will trigger everything
     const formData = new FormData(formRef.current);
     fetch("https://formspree.io/f/mgvageav", {
       method: "POST",
@@ -116,26 +127,34 @@ export default function ContactTerminal() {
         <iframe name="dummyFrame" style={{ display: "none" }} />
       </form>
 
-      {/* Terminal Output - below the button */}
-      {startedPush && (
-        <div className="mt-6 bg-[#000000]/40 text-green-400 text-sm font-mono px-4 py-3 rounded-md border border-[#2C74B3]/20 shadow-inner">
-          {outputLines.map((line, idx) => (
-            <motion.p
-              key={idx}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: idx * 0.2 }}
-              className={
-                line.includes("✅")
-                  ? "text-green-300 font-semibold"
-                  : "text-green-400"
-              }
-            >
-              {line}
-            </motion.p>
-          ))}
-        </div>
-      )}
+      {/* Terminal Output */}
+      <AnimatePresence>
+        {startedPush && showOutput && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mt-6 bg-[#000000]/40 text-green-400 text-sm font-mono px-4 py-3 rounded-md border border-[#2C74B3]/20 shadow-inner"
+          >
+            {outputLines.map((line, idx) => (
+              <motion.p
+                key={idx}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: idx * 0.2 }}
+                className={
+                  line.includes("✅")
+                    ? "text-green-300 font-semibold"
+                    : "text-green-400"
+                }
+              >
+                {line}
+              </motion.p>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
