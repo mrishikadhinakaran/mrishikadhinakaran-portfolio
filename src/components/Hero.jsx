@@ -28,12 +28,10 @@ function Hero() {
     return (
         <div
             ref={containerRef}
-
-            className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-center lg:text-left overflow-hidden gap-20 pt-20 sm:pt-24"
+            className="modern-gradient relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 text-left sm:text-center lg:text-left overflow-hidden gap-20 pt-20 sm:pt-24"
         >
-
             {/* Text Section */}
-            <div className="flex flex-col items-center lg:items-start gap-4 z-10">
+            <div className="flex flex-col items-start sm:items-center lg:items-start gap-4 z-10">
                 <div className="text-xl sm:text-2xl mb-1 text-gray-300">
                     <TypeAnimation
                         sequence={[
@@ -56,7 +54,7 @@ function Hero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-5xl sm:text-5xl lg:text-7xl font-bold text-white mb-6">
                         Hello!, I&apos;m <br />
                         <span className="gradient-text-hero pulse-glow">Raghav Katta</span>
                     </h1>
@@ -65,13 +63,12 @@ function Hero() {
                         Specializing in building modern web applications with React, Node.js, and cloud technologies.
                         Passionate about creating seamless user experiences and scalable backend solutions.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-start sm:justify-center lg:justify-start">
                         <motion.a
                             href="#About1"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-cyan-500/50 transition-all"
-
+                            className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff]  text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-cyan-500/50 transition-all"
                         >
                             Contact Me
                         </motion.a>
@@ -80,7 +77,6 @@ function Hero() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="backdrop-blur-md bg-white/10 border border-white/20 text-white font-semibold px-8 py-3 rounded-lg hover:bg-white/20 transition-all"
-
                         >
                             View Work
                         </motion.a>
@@ -122,7 +118,6 @@ function Hero() {
                     <IoIosArrowDown size={24} />
                 </a>
             </motion.div>
-
         </div>
     );
 }
