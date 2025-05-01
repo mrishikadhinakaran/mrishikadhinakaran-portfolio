@@ -8,6 +8,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Particle from './components/Particle.jsx'
 import SnowParticles from './components/SnowParticle.jsx'
+import GithubStats from './components/GithubStats.jsx'
 import SmoothScroll from './components/LenisScroll.jsx'
 
 function App() {
@@ -24,12 +25,17 @@ function App() {
         <section id='Technologies'>
           <Skills />
         </section>
-        <Seperation />
+        {/* <Seperation /> */}
         <section id='Projects'>
           <SnowParticles />
           <Projects />
         </section>
-        <Seperation />
+       
+        <section id='Coding Stats'>
+        <SnowParticles />
+          <GithubStats/>
+        </section>
+    
         <section id='About'>
           <About />
         </section>
