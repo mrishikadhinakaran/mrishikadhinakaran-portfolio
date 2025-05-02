@@ -9,12 +9,13 @@ import Projects from './components/Projects'
 import Particle from './components/Particle.jsx'
 import SnowParticles from './components/SnowParticle.jsx'
 import GithubStats from './components/GithubStats.jsx'
+import CustomCursor from './components/CustomCursor';
 import SmoothScroll from './components/LenisScroll.jsx'
 
 function App() {
   return (
     <div className='min-h-screen flex flex-col bg-gradient1'>
-
+  <CustomCursor />
       <Header />
       <SmoothScroll>
         <section id='Home'>
