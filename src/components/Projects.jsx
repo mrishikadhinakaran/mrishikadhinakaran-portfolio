@@ -30,7 +30,7 @@ const projects = [
     },
     {
         title: "PDFChatBot",
-        subtitle: "AI-Powered PDF Query Assistant",
+        subtitle: "RAG-PDF Query Assistant",
         year: "2025",
         description: "An intelligent chatbot that allows users to query and interact with PDF documents using natural language processing.",
         demo: "https://github.com/mrishikadhinakaran/RAG-pdfChatbot",
@@ -41,7 +41,7 @@ const projects = [
     },
     {
         title: "Endometrial Cancer Detection",
-        subtitle: "Deep learning-based system for early cancer detection",
+        subtitle: "Deep learning system for early cancer detection",
         year: "2025",
         description: "A comprehensive health and wellness tracking application with personalized insights and recommendations.",
         demo: "https://github.com/mrishikadhinakaran/Endometrial-Cancer-Detection",
