@@ -1,27 +1,27 @@
-# 🌐 Raghav Katta — Personal Developer Portfolio
+# 🌐 Mrishika Dhinakaran — Personal Developer Portfolio
 
 This is my official developer portfolio website built using modern frontend tools like **React**, **Tailwind CSS**, and **Framer Motion**. It highlights my projects, skills, and contact details — a digital home for everything I do as a developer.
 
-> 🔴 Live at: [https://www.raghavkatta.xyz](https://www.raghavkatta.xyz)
+> 🔴 Live at: [https://www.mrishikadhinakaran.xyz](https://www.mrishikadhinakaran.xyz)
 
 ---
 
 ## 🚀 Tech Stack
 
-- ⚛️ **React.js** – SPA framework
-- 🎨 **Tailwind CSS** – Utility-first CSS for sleek responsiveness
-- 🧠 **Framer Motion** – Seamless animations and transitions
-- 🔁 **Lenis + Motion** – Smooth scrolling effects
-- 🍞 **React Toast** – Toast notifications
-- 🎯 **React Icons** – Icon pack integration
-- ⚡ **Vite** – Lightning-fast build tool
+* ⚛️ **React.js** – SPA framework
+* 🎨 **Tailwind CSS** – Utility-first CSS for sleek responsiveness
+* 🧠 **Framer Motion** – Seamless animations and transitions
+* 🔁 **Lenis + Motion** – Smooth scrolling effects
+* 🍞 **React Toast** – Toast notifications
+* 🎯 **React Icons** – Icon pack integration
+* ⚡ **Vite** – Lightning-fast build tool
 
 ---
 
 ## 📁 Folder Structure
 
 ```bash
-RaghavKatta/
+MrishikaDhinakaran/
 ├── .vscode/               # Editor configs
 ├── .vercel/               # Vercel deployment configs
 ├── dist/                  # Production build (auto-generated)
@@ -36,46 +36,53 @@ RaghavKatta/
 ├── package.json
 ├── tailwind.config.js
 └── index.html
-📦 Installation
-bash
-Copy
-Edit
+```
+
+---
+
+## 📦 Installation
+
+```bash
 # Clone the repo
-git clone https://github.com/raghavxkatta/RaghavKatta.git
-cd RaghavKatta
+git clone https://github.com/mrishikadhinakaran/MrishikaDhinakaran.git
+cd MrishikaDhinakaran
 
 # Install dependencies
 npm install
 
 # Start local dev server
 npm run dev
-🧪 Scripts
+```
 
-Command	Purpose
-npm run dev	Run app in development mode
-npm run build	Build for production
-npm run preview	Preview production build
-npm run lint	Lint code using ESLint
-🌐 Deployment
-Deployed via Vercel for CI/CD with GitHub integration.
+---
 
-bash
-Copy
-Edit
+## 🧪 Scripts
+
+| Command         | Purpose                     |
+| --------------- | --------------------------- |
+| npm run dev     | Run app in development mode |
+| npm run build   | Build for production        |
+| npm run preview | Preview production build    |
+| npm run lint    | Lint code using ESLint      |
+
+---
+
+## 🌐 Deployment
+
+Deployed via **Vercel** for CI/CD with GitHub integration.
+
+```bash
 # For manual deployment (Vercel CLI)
 vercel --prod
-✨ Features
-Smooth hero animations
+```
 
-Scroll-based transitions
+---
 
-Responsive sections (About, Projects, Skills)
+## ✨ Features
 
-Clean, minimal aesthetic
-
-Fully mobile-friendly
-
-Toast notifications and scroll enhancements
-
-
-
+* Smooth hero animations
+* Scroll-based transitions
+* Responsive sections (About, Projects, Skills)
+* Clean, minimal aesthetic
+* Fully mobile-friendly
+* Toast notifications and scroll enhancements
