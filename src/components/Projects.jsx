@@ -19,7 +19,7 @@ const projects = [
     },
     {
         title: "AgriSense",
-        subtitle: "ML-based agriculture Management Platform",
+        subtitle: "ML-based Realtime IOT based agriculture Management Platform",
         year: "2025",
         description: "An AI-powered platform for agriculture management using machine learning techniques.",
         demo: "https://agri-sense-rho.vercel.app/",
