@@ -14,7 +14,7 @@ import SmoothScroll from './components/LenisScroll.jsx'
 
 function App() {
   return (
-    <div className='min-h-screen flex flex-col bg-gradient1'>
+    <div className='min-h-screen flex flex-col bg-gradient-to-br from-[#0A2647] via-[#144272] to-[#205295]'>
   <CustomCursor />
       <Header />
       <SmoothScroll>

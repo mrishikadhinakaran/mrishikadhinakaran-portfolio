@@ -1,73 +1,73 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import hireorbit from "../assets/Hireorbit.png";
-import finwise from "../assets/Finwise.png";
-import hackyours from "../assets/HackYours.png";
-import caremate from "../assets/Caremate.png";
+import pdfchatbot from "../assets/PDFchatbot.png";
+import agrisense from "../assets/Agrisense.png";
+import lifeflow from "../assets/Lifeflow.png";
+import endo from "../assets/endo.png";
 
 const projects = [
     {
-        title: "HackYours",
-        subtitle: "AI-Powered Hackathon Helper",
+        title: "LifeFlow",
+        subtitle: "AI-Powered daily Tracker & Planner",
         year: "2025",
-        description: "An AI-enhanced platform to help teams ideate and build hackathon projects with smart tools and dashboards.",
-        demo: "https://hackyours.raghavkatta.xyz",
-        image: hackyours,
-        github: "https://github.com/raghavxkatta/HackYours-BinaryBrains",
-        tech: ["Gemini API", "React", "Firebase", "Tailwind"],
-        color: "#00FF00"
+        description: "An AI-enhanced platform to help peoples track and plan daily works with smart tools and dashboards.",
+        demo: "https://github.com/mrishikadhinakaran/LIFEFLOW-project",
+        image: lifeflow,
+        github: "https://github.com/mrishikadhinakaran/LIFEFLOW-project",
+        tech: ["React", "Express", "Convex", "MongoDB"],
+        color: "#eda8dd"
     },
     {
-        title: "FinWise",
-        subtitle: "AI-Powered Investment Platform",
+        title: "AgriSense",
+        subtitle: "ML-based agriculture Management Platform",
         year: "2025",
-        description: "A personal finance assistant integrating AMFI and Gemini APIs for recommendations, education and advice.",
-        demo: "https://finwise.ayush-sharma.in",
-        image: finwise,
-        github: "#",
-        tech: ["React", "Tailwind", "Appwrite", "Framer Motion"],
+        description: "An AI-powered platform for agriculture management using machine learning techniques.",
+        demo: "https://agri-sense-rho.vercel.app/",
+        image: agrisense,
+        github: "https://github.com/mrishikadhinakaran/Agrisense_work",
+        tech: ["React", "Tailwind", "Firebase", "MapLibre GL JS"],
         color: "#00CC9A"
     },
     {
-        title: "HireOrbit",
-        subtitle: "Resume Recruitment Manager",
+        title: "PDFChatBot",
+        subtitle: "AI-Powered PDF Query Assistant",
         year: "2025",
-        description: "Dashboard to parse, rank and filter resumes with ML + Firebase and deployable with ease.",
-        demo: "https://hireorbit.pages.dev",
-        github: "#",
-        image: hireorbit,
-        tech: ["MERN", "Firebase", "Cloudflare"],
-        color: "#FFD700"
+        description: "An intelligent chatbot that allows users to query and interact with PDF documents using natural language processing.",
+        demo: "https://github.com/mrishikadhinakaran/RAG-pdfChatbot",
+        image: pdfchatbot,
+        github: "https://github.com/mrishikadhinakaran/RAG-pdfChatbot",
+        tech: ["React", "Node.js", "Python", "NLP"],
+        color: "#3475ed"
     },
     {
-        title: "CareMate",
-        subtitle: "Health Monitoring Web App",
+        title: "Endometrial Cancer Detection",
+        subtitle: "Deep learning-based system for early cancer detection",
         year: "2025",
-        description: "Personal health tracker with medication schedules, reminders, and appointment alerts.",
-        demo: "https://carematehealth.vercel.app",
-        github: "#",
-        image: caremate,
+        description: "A comprehensive health and wellness tracking application with personalized insights and recommendations.",
+        demo: "https://github.com/mrishikadhinakaran/Endometrial-Cancer-Detection",
+        image: endo,
+        github: "https://github.com/mrishikadhinakaran/Endometrial-Cancer-Detection",
         tech: ["React", "Firebase", "Node.js"],
-        color: "#0066FF"
+        color: "#eda058"
     }
 ];
 
 export default function Projects() {
     return (
-        <section id="Projects" className="bg-[#0B2447] text-white px-6 py-24 min-h-screen">
+        <section id="Projects" className="bg-gradient-to-br from-[#0A2647] via-[#144272] to-[#205295] text-white px-6 py-24 min-h-screen">
             <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center text-4xl sm:text-6xl pulse-glow font-bold mb-20 relative flex justify-center text-transparent bg-clip-text bg-gradient-to-r from-[#00c6ff] to-[#0072ff]"
+                className="text-center text-4xl sm:text-6xl pulse-glow font-bold mb-20 relative flex justify-center text-transparent bg-clip-text bg-gradient-to-r from-[#8a6de0] to-[#4a9fe0]"
             >
                 My Projects
 
                 {/* Glow underline pulse */}
-                <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 h-[3px] w-32 bg-gradient-to-r from-[#00c6ff] via-[#2C74B3] to-[#00c6ff] blur-sm animate-pulse rounded-full" />
+                <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 h-[3px] w-32 bg-gradient-to-r from-[#8a6de0] via-[#4a55c7] to-[#4a9fe0] blur-sm animate-pulse rounded-full" />
 
                 {/* Soft neon reflection */}
-                <span className="absolute -bottom-6 left-1/2 w-40 h-6 blur-[40px] opacity-40 rounded-full -translate-x-1/2 bg-[#00c6ff]" />
+                <span className="absolute -bottom-6 left-1/2 w-40 h-6 blur-[40px] opacity-40 rounded-full -translate-x-1/2 bg-[#4a9fe0]" />
             </motion.h2>
 
             <div className="space-y-20 max-w-6xl mx-auto">
@@ -77,7 +77,7 @@ export default function Projects() {
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
-                        className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md hover:shadow-2xl group transition-transform duration-300 hover:scale-[1.01]"
+                        className="relative rounded-2xl overflow-hidden border border-[#4a55c7]/30 bg-gradient-to-br from-[#0f1a3c]/20 to-[#1d2a57]/20 backdrop-blur-md hover:shadow-2xl group transition-transform duration-300 hover:scale-[1.01]"
                     >
                         {/* Left Glow Bar */}
                         <div
@@ -123,15 +123,14 @@ export default function Projects() {
                                         href={project.demo}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="flex items-center gap-2 hover:text-cyan-400"
+                                        className="flex items-center gap-2 hover:text-[#4a9fe0]"
                                     >
-                                        <FaExternalLinkAlt /> Live Demo
+                                        <FaExternalLinkAlt /> 
                                     </a>
                                     <a
                                         href="#"
-                                        className="flex items-center gap-2 hover:text-cyan-400"
+                                        className="flex items-center gap-2 hover:text-[#4a9fe0]"
                                     >
-                                        <FaGithub /> Source Code
                                     </a>
                                 </div>
                             </div>

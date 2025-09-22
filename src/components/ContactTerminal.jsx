@@ -11,14 +11,14 @@ export default function ContactTerminal() {
   const handlePush = async () => {
     setStartedPush(true);
     setShowOutput(true);
-    setOutputLines(["$ git push origin message-to-raghav"]);
+    setOutputLines(["$ git push origin message-to-Mrishika"]);
 
     const fakeOutput = [
       "Enumerating objects: 3, done.",
       "Counting objects: 100% (3/3), done.",
       "Compressing objects: 100% (2/2), done.",
       "Writing objects: 100% (3/3), 1.23 KiB | 1.23 MiB/s, done.",
-      "To: raghav.dev",
+      "To: Mrishika.dev",
       "✅ Message sent successfully!",
     ];
 
@@ -48,7 +48,7 @@ export default function ContactTerminal() {
     e.preventDefault();
 
     const formData = new FormData(formRef.current);
-    fetch("https://formspree.io/f/mgvageav", {
+    fetch("https://formspree.io/f/xldprdvl", {
       method: "POST",
       body: formData,
     });
@@ -72,8 +72,7 @@ export default function ContactTerminal() {
         onSubmit={handleSubmit}
         method="POST"
         target="dummyFrame"
-        className="flex flex-col gap-5"
-      >
+        className="flex flex-col gap-5">
         <div className="flex flex-col gap-1">
           <label className="text-sm text-[#84ccf7] font-mono">
             $ git config --global user.name
@@ -121,7 +120,7 @@ export default function ContactTerminal() {
           disabled={isPushing}
           className="w-full bg-gradient-to-r from-[#00c6ff] to-[#2C74B3] text-white font-semibold py-3 rounded-lg transition-all shadow-md hover:shadow-[0_0_20px_#2C74B3] font-mono disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          🚀 git push origin message-to-Raghav
+          🚀 git push origin message-to-Mrishika
         </motion.button>
 
         <iframe name="dummyFrame" style={{ display: "none" }} />

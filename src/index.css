@@ -6,7 +6,7 @@
     }
 
     .dark html {
-        @apply bg-[#0A2647] text-white;
+        @apply bg-gradient-to-br from-[#0A2647] via-[#144272] to-[#205295] text-white;
     }
 }
 
@@ -17,20 +17,20 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #0B2447;
+    background: #0A2647;
     /* Matches your dark base background */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #205295, #2C74B3);
-    /* Subtle gradient */
+    background: linear-gradient(to bottom, #4a55c7, #8a6de0, #4a9fe0);
+    /* Blue and violet mixed gradient */
     border-radius: 9999px;
-    border: 2px solid #0B2447;
+    border: 2px solid #0A2647;
     /* Blends with track background */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #00c6ff, #0072ff);
+    background: linear-gradient(to bottom, #3a45b7, #7a5dd0, #3a8fd0);
     /* Lighter on hover */
 }
 
@@ -55,11 +55,11 @@
 
         0%,
         100% {
-            text-shadow: 0 0 6px rgba(0, 198, 255, 0.4);
+            text-shadow: 0 0 6px rgba(138, 109, 224, 0.4);
         }
 
         50% {
-            text-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
+            text-shadow: 0 0 12px rgba(74, 159, 224, 0.6);
         }
     }
 
@@ -86,7 +86,7 @@
         }
 
         50% {
-            border-color: #00ff84;
+            border-color: #4a9fe0;
         }
     }
 
@@ -94,7 +94,7 @@
         display: inline-block;
         overflow: hidden;
         white-space: nowrap;
-        border-right: 2px solid #00ff84;
+        border-right: 2px solid #4a9fe0;
         animation:
             typing 3s steps(30, end),
             blinkCursor 0.75s step-end infinite;
@@ -116,7 +116,7 @@
     .blink-cursor::after {
         content: "$";
         animation: blink 1s infinite;
-        color: #00ff84;
+        color: #4a9fe0;
         margin-left: 0.3rem;
     }
 
@@ -125,20 +125,20 @@
     }
 
     .github-graph rect[data-count="1"] {
-        fill: #00ffc3;
+        fill: #8a6de0;
     }
 
     .github-graph rect[data-count="2"] {
-        fill: #00e0ff;
+        fill: #4a9fe0;
     }
 
     .github-graph rect[data-count="3"] {
-        fill: #00aaff;
+        fill: #4a55c7;
     }
 
     .github-graph rect[data-count="4"],
     .github-graph rect[data-count="5"] {
-        fill: #0077ff;
+        fill: #3a45b7;
     }
 
     .github-graph rect {
@@ -146,7 +146,7 @@
     }
 
     .github-graph rect:hover {
-        filter: drop-shadow(0 0 6px #00f0ff);
+        filter: drop-shadow(0 0 6px #4a9fe0);
         cursor: pointer;
     }
 
@@ -178,7 +178,7 @@
     }
 
     .glow-effect {
-        text-shadow: 0 0 10px rgba(32, 82, 149, 0.5);
+        text-shadow: 0 0 10px rgba(74, 85, 199, 0.5);
     }
 
     .hover-lift {
@@ -187,42 +187,42 @@
 
     .hover-lift:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 20px rgba(74, 159, 224, 0.3);
     }
 
     .text-glow-cyan {
-        text-shadow: 0 0 8px rgba(0, 255, 255, 0.6), 0 0 16px rgba(0, 255, 255, 0.3);
+        text-shadow: 0 0 8px rgba(74, 159, 224, 0.6), 0 0 16px rgba(74, 92, 199, 0.3);
     }
 
     .gradient-text-hero {
-        background: linear-gradient(to right, #00c6ff, #0072ff);
-        /* pure cyan to blue */
+        background: linear-gradient(to right, #8a6de0, #4a9fe0);
+        /* violet to blue gradient */
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
         text-shadow:
-            0 0 6px rgba(0, 198, 255, 0.5),
-            0 0 12px rgba(0, 114, 255, 0.3);
+            0 0 6px rgba(138, 109, 224, 0.5),
+            0 0 12px rgba(74, 159, 224, 0.3);
     }
 
 
     .gradient-text {
-        background: linear-gradient(to right, #4facfe, #00f2fe);
-        text-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+        background: linear-gradient(to right, #8a6de0, #4a9fe0);
+        text-shadow: 0 0 8px rgba(74, 159, 224, 0.25);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
     }
 
     .glass-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(15, 26, 60, 0.2);
         backdrop-filter: blur(20px);
         border-radius: 20px;
         transition: all 0.3s ease;
     }
 
     .glass-card:hover {
-        box-shadow: 0 0 30px rgba(44, 116, 179, 0.4);
+        box-shadow: 0 0 30px rgba(74, 92, 199, 0.4);
     }
 
 
@@ -234,27 +234,27 @@
     .gradient-border {
         border: double 1px transparent;
         background-image: linear-gradient(black, black),
-            linear-gradient(135deg, #0A2647, #205295);
+            linear-gradient(135deg, #0A2647, #4a55c7);
         background-origin: border-box;
         background-clip: padding-box, border-box;
     }
 
     .skill-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(15, 26, 60, 0.2);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(74, 85, 199, 0.3);
         border-radius: 1rem;
         padding: 1rem;
         position: relative;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 0 0 rgba(0, 255, 255, 0);
+        box-shadow: 0 0 0 rgba(74, 159, 224, 0);
         transform-style: preserve-3d;
     }
 
     .skill-card:hover {
         transform: translateY(-5px) rotateX(3deg) rotateY(3deg);
-        box-shadow: 0 10px 40px rgba(0, 255, 255, 0.25);
+        box-shadow: 0 10px 40px rgba(74, 159, 224, 0.25);
     }
 
     .skill-card::before {
@@ -263,10 +263,10 @@
         inset: -2px;
         border-radius: inherit;
         background: conic-gradient(from 180deg at 50% 50%,
-                #00c6ff,
-                #0072ff,
-                #00f9ff,
-                #00c6ff);
+                #8a6de0,
+                #4a55c7,
+                #4a9fe0,
+                #8a6de0);
         filter: blur(30px);
         opacity: 0.25;
         z-index: -1;

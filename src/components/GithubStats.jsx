@@ -28,12 +28,12 @@ function GithubStats() {
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                     <img
-                        src="https://github-readme-stats.vercel.app/api?username=raghavxkatta&show_icons=true&theme=tokyonight"
+                        src="https://github-readme-stats.vercel.app/api?username=Mrishikadhinakaran&show_icons=true&theme=tokyonight"
                         alt="GitHub Stats"
                         className="w-full max-w-md rounded-xl shadow-lg"
                     />
                     <div className="github-graph text-cyan-600 max-w-full h-auto mt-6">
-                        <GitHubCalendar username="raghavxkatta" />
+                        <GitHubCalendar username="Mrishikadhinakaran" />
                     </div>
                 </div>
             </motion.div>

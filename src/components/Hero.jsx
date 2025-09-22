@@ -37,7 +37,9 @@ function Hero() {
                         sequence={[
                             'Full Stack Developer',
                             2000,
-                            'UI/UX Designer',
+                            'Machine Learning Enthusiast',
+                            2000,
+                            'Backend Developer',
                             2000,
                             'Problem Solver',
                             2000,
@@ -56,12 +58,11 @@ function Hero() {
                 >
                     <h1 className="text-5xl sm:text-5xl lg:text-7xl font-bold text-white mb-6">
                         Hello!, I&apos;m <br />
-                        <span className="gradient-text-hero pulse-glow">Raghav Katta</span>
+                        <span className="gradient-text-hero pulse-glow"> Mrishika Dhinakaran</span>
                     </h1>
 
                     <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-6">
-                        Specializing in building modern web applications with React, Node.js, and cloud technologies.
-                        Passionate about creating seamless user experiences and scalable backend solutions.
+                        Specializing in full stack development, backend systems, and machine learning, with a passion for solving complex problems through scalable and user-focused solutions.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-start sm:justify-center lg:justify-start">
                         <motion.a

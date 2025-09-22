@@ -5,7 +5,7 @@ const CodingStats = () => {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.github.com/users/raghavxkatta')
+    fetch('https://api.github.com/users/mrishikadhinakaran')
       .then(response => response.json())
       .then(data => setUserData(data));
   }, []);
@@ -53,7 +53,7 @@ const CodingStats = () => {
       <div className="border border-gray-700 rounded-lg p-6 w-full max-w-6xl bg-[#112240] z-10">
         <h2 className="text-2xl mb-6 text-center text-yellow-400">GitHub Contributions</h2>
         <GitHubCalendar
-          username="raghavxkatta"
+          username="Mrishikadhinakaran"
           blockSize={12}
           blockMargin={4}
           colorScheme="dark"
